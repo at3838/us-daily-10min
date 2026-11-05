@@ -77,8 +77,79 @@ def rsi(closes, n=14):
     return round(100 - 100 / (1 + rs), 1)
 
 
+def fetch_spx_history():
+    """^GSPC 過去一年日線收市價 [(date, close), ...]。"""
+    d = json.loads(get("https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC"
+                       "?interval=1d&range=1y"))
+    r = d["chart"]["result"][0]
+    ts = r["timestamp"]
+    closes = r["indicators"]["quote"][0]["close"]
+    return [(datetime.fromtimestamp(t, timezone.utc).strftime("%Y-%m-%d"), c)
+            for t, c in zip(ts, closes) if c is not None]
+
+
+def compute_verdict(spx_close, breadth_pct, vix_close):
+    """環境判讀（規則式，唔係預測）：由 SPX 50/200 日線、廣度、VIX 計。
+    偏空：SPX 同時跌穿 50 日線同 200 日線，或 VIX 高過 30。
+    偏多：SPX 企喺 50 日線同 200 日線上面，VIX 低過 20，廣度 ≥60%。
+    其餘一律中性。明天看什麼兩個情景用 50/200 日線水平做觸發位。"""
+    try:
+        hist = fetch_spx_history()
+        closes = [c for _, c in hist]
+    except Exception as e:
+        print(f"WARN verdict: {e}", file=sys.stderr)
+        return {"verdict": "未有判讀", "reason": "攞唔到標普歷史數據",
+                "pullback": None, "weaken": "", "steady": ""}
+    ma50 = sum(closes[-50:]) / 50
+    ma200 = sum(closes[-200:]) / 200 if len(closes) >= 200 else None
+    high63 = max(closes[-63:])
+    pullback = round((high63 - spx_close) / high63 * 100, 1)
+    above50 = spx_close > ma50
+    above200 = (spx_close > ma200) if ma200 else None
+    if (not above50 and above200 is False) or vix_close > 30:
+        verdict = "偏空"
+    elif above50 and above200 and vix_close < 20 and breadth_pct >= 60:
+        verdict = "偏多"
+    else:
+        verdict = "中性"
+    parts = [f"標普企喺 50 日線（約 {ma50:,.0f} 點）"
+             f"{'上面' if above50 else '下面'}"]
+    if ma200:
+        parts.append(f"200 日線（約 {ma200:,.0f} 點）"
+                     f"{'上面' if above200 else '下面'}")
+    parts.append(f"VIX {vix_close:.1f} "
+                 f"{'正常' if vix_close < 20 else '升溫'}")
+    parts.append(f"觀察名單 {breadth_pct:.0f}% 企喺 50 日線上面")
+    if above50:
+        weaken = f"標普失守 50 日線（約 {ma50:,.0f} 點）→ 環境判讀轉為偏空"
+        steady = "標普企穩 50 日線之上 → 升勢未變"
+    else:
+        weaken = (f"標普再失 200 日線（約 {ma200:,.0f} 點）"
+                  f"→ 環境判讀轉為偏空" if ma200 else
+                  "標普繼續受壓 → 環境判讀轉為偏空")
+        steady = f"標普收復 50 日線（約 {ma50:,.0f} 點）→ 回落可視為告一段落"
+    return {"verdict": verdict, "reason": "；".join(parts) + "。",
+            "pullback": pullback, "ma50": round(ma50, 1),
+            "ma200": round(ma200, 1) if ma200 else None,
+            "weaken": weaken, "steady": steady}
+
+
+def patch_verdict(repo):
+    """--verdict-only：讀現有 data.json，補環境判讀，再寫返。"""
+    path = os.path.join(repo, "data.json")
+    data = json.load(open(path))
+    spx = next(x for x in data["market"]["indices"] if x["name"] == "標普500")
+    breadth_pct = data["breadth"]["above50"] / data["breadth"]["total"] * 100
+    data["verdict"] = compute_verdict(spx["close"], breadth_pct,
+                                      data["market"]["vix"]["close"])
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(data, fh, ensure_ascii=False, indent=2)
+    print(f"OK verdict patched: {data['verdict']['verdict']}，"
+          f"回落 {data['verdict']['pullback']}%")
+
+
 def parse_args():
-    args = {"date": None, "form4": None, "repo": BASE}
+    args = {"date": None, "form4": None, "repo": BASE, "verdict_only": False}
     for i, a in enumerate(sys.argv[1:]):
         if a == "--date":
             args["date"] = sys.argv[i + 2]
@@ -86,6 +157,8 @@ def parse_args():
             args["form4"] = sys.argv[i + 2]
         elif a == "--repo":
             args["repo"] = sys.argv[i + 2]
+        elif a == "--verdict-only":
+            args["verdict_only"] = True
     return args
 
 
@@ -137,7 +210,8 @@ def parse_earnings(path, tomorrow_str):
 
 
 def run_form4_copy():
-    """用 /tmp 副本跑 fetch_form4.py（唔掂正本 form4-seen.txt），回傳行列。"""
+    """用 /tmp 副本跑 fetch_form4.py（唔掂正本 form4-seen.txt），
+    回傳（交易行列，總數 {total, buys, sells} 或 None）。"""
     copy_dir = "/tmp/insider-copy"
     src = os.path.join(HOME, "workspace", "insider-track")
     subprocess.run(["rm", "-rf", copy_dir], check=False)
@@ -151,15 +225,24 @@ def run_form4_copy():
                            timeout=600, cwd=copy_dir)
         lines = [l[2:].strip() for l in r.stdout.splitlines()
                  if l.startswith("• ")]
-        return lines
+        totals = None
+        m = re.search(r"過去 2 日共 (\d+) 筆有意義交易（買入 (\d+)／賣出 (\d+)）",
+                      r.stdout)
+        if m:
+            totals = {"total": int(m.group(1)), "buys": int(m.group(2)),
+                      "sells": int(m.group(3))}
+        return lines, totals
     except Exception as e:
         print(f"WARN form4: {e}", file=sys.stderr)
-        return []
+        return [], None
 
 
 def main():
     args = parse_args()
     repo = args["repo"]
+    if args.get("verdict_only"):
+        patch_verdict(repo)
+        return
 
     # --- 1. 市場數據（先跑 fresh，失敗就用現成檔） ---
     market_path = "/tmp/stock-web-data/data.json"
@@ -263,15 +346,23 @@ def main():
         print(f"WARN blackbox: {e}", file=sys.stderr)
 
     # --- 6. Form 4 內幕交易 ---
+    totals = None
     if args["form4"] and os.path.exists(args["form4"]):
         lines = [l.strip() for l in open(args["form4"], encoding="utf-8")
                  if l.strip()]
     else:
-        lines = run_form4_copy()
+        lines, totals = run_form4_copy()
     trades = []
     for l in lines[:12]:
         trades.append({"text": l, "buy": "買入" in l})
-    buys = sum(1 for t in trades if t["buy"])
+    if totals:
+        ins_total, ins_buys, ins_sells = (totals["total"], totals["buys"],
+                                          totals["sells"])
+    else:
+        # 冇 header 總數嗰陣（例如用 --form4 檔案），只可以數列出嚟嗰 12 筆
+        ins_buys = sum(1 for t in trades if t["buy"])
+        ins_sells = len(trades) - ins_buys
+        ins_total = len(trades)
 
     # --- 7. 財報＋明日觀察 ---
     ef = latest_earnings_file()
@@ -314,12 +405,18 @@ def main():
             f"{w['symbol']} {'升' if w['chg'] >= 0 else '跌'} {abs(w['chg']):.1f}%"
             for w in sorted(big, key=lambda x: -abs(x["chg"]))[:4]) + "。"
 
+    # --- 10. 環境判讀（規則式） ---
+    breadth_pct = above50 / len(watchlist) * 100 if watchlist else 0
+    verdict = compute_verdict(spx["close"], breadth_pct, vix["close"])
+    print(f"OK verdict: {verdict['verdict']}，回落 {verdict['pullback']}%")
+
     now_lon = datetime.now(timezone(timedelta(hours=0))).astimezone(
         timezone(timedelta(hours=0)))
     data = {
         "date": target, "weekday": f"星期{wd}",
         "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
         "headline": headline, "focus": focus,
+        "verdict": verdict,
         "market": {
             "indices": [
                 {"name": "標普500", "close": spx["close"], "chg": spx["chg"]},
@@ -332,7 +429,8 @@ def main():
         "sectors": sectors,
         "watchlist": watchlist_sorted,
         "blackbox": blackbox,
-        "insider": {"buys": buys, "sells": len(trades) - buys, "trades": trades},
+        "insider": {"total": ins_total, "buys": ins_buys, "sells": ins_sells,
+                    "trades": trades},
         "earnings": earnings,
         "tomorrow": tomorrow_list,
         "news": news,

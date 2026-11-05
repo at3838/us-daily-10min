@@ -20,6 +20,11 @@
     padding: 16px 18px; margin: 18px 0 6px; }
   .focus { font-size: 21px; background: #fff7e6; border-left: 6px solid #d9930d;
     padding: 14px 18px; margin: 10px 0; }
+  .verdict { background: #eef7f0; border-left: 6px solid #0a7d2c; padding: 16px 18px; margin: 10px 0; }
+  .verdict .v-word { font-size: 28px; font-weight: 700; }
+  .verdict .v-line { font-size: 21px; margin-top: 6px; }
+  .guide { display: flex; gap: 14px; margin: 16px 0 4px; font-size: 20px; flex-wrap: wrap; }
+  .guide a { background: #f2f6ff; border-radius: 8px; padding: 8px 14px; }
   .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
   .card { border: 1px solid #ddd; border-radius: 10px; padding: 12px 14px; }
   .card .name { font-size: 18px; color: #555; }
@@ -53,18 +58,20 @@
   <div class="sub" id="dateline">載入中…</div>
   <div class="headline" id="headline"><span class="loading">載入中…</span></div>
   <div class="focus" id="focus" style="display:none"></div>
+  <div class="verdict" id="verdict" style="display:none"></div>
+  <div class="guide"><a href="#market">1 市場 ↓</a><a href="#sectors">2 族群 ↓</a><a href="#stocks">3 個股 ↓</a></div>
 
-  <h2>大市</h2>
+  <h2 id="market">1. 今天的盤面環境</h2>
   <div class="cards" id="indexCards"></div>
   <p class="note" id="macroLine"></p>
   <p class="note" id="breadthLine"></p>
 
-  <h2>板塊資金流</h2>
+  <h2 id="sectors">2. 錢正在往哪裡跑？</h2>
   <div id="sectorBars"></div>
   <p><img class="chart" id="sectorChart" src="sector_flow.png" alt="板塊資金流圖"></p>
   <p class="note">Yahoo Finance 5 分鐘 bar，Chaikin 資金流近似計算，非逐筆訂單流。綠色淨流入，紅色淨流出。</p>
 
-  <h2>觀察名單（25 隻）</h2>
+  <h2 id="stocks">3. 那我該看哪幾檔？ — 觀察名單（25 隻）</h2>
   <div class="scroll"><table>
     <thead><tr><th>股票</th><th>現價</th><th>一日升跌</th><th>50 日線</th><th>200 日線</th><th>RSI</th></tr></thead>
     <tbody id="watchBody"></tbody>
@@ -118,6 +125,15 @@ fetch("data.json").then(function(r) { return r.json(); }).then(function(d) {
     d.date + "（" + d.weekday + "） · 美東收市後更新 · 資料截至 " + d.updated_at;
   document.getElementById("headline").textContent = d.headline;
   if (d.focus) { var f = document.getElementById("focus"); f.style.display = ""; f.textContent = d.focus; }
+  if (d.verdict) {
+    var v = document.getElementById("verdict");
+    v.style.display = "";
+    v.innerHTML = '<div class="v-word">今日作戰判讀：環境' + d.verdict.verdict + '</div>' +
+      (d.verdict.pullback != null ? '<div class="v-line">距近期高點回落 ' + d.verdict.pullback + '%</div>' : "") +
+      '<div class="v-line">' + d.verdict.reason + '</div>' +
+      '<div class="v-line">明天看什麼：轉弱 — ' + d.verdict.weaken + '；轉穩 — ' + d.verdict.steady + '。</div>' +
+      '<div class="note">規則式判讀，唔係投資建議。</div>';
+  }
 
   var cards = "";
   d.market.indices.forEach(function(x) {
@@ -168,8 +184,9 @@ fetch("data.json").then(function(r) { return r.json(); }).then(function(d) {
   document.getElementById("bbBody").innerHTML = bb || '<tr><td colspan="5">未有數據</td></tr>';
 
   document.getElementById("insiderSummary").textContent =
-    "過去兩日共 " + (d.insider.buys + d.insider.sells) + " 筆有意義交易（買入 " +
-    d.insider.buys + "／賣出 " + d.insider.sells + "）。";
+    "過去兩日共 " + (d.insider.total != null ? d.insider.total : d.insider.buys + d.insider.sells) +
+    " 筆有意義交易（買入 " + d.insider.buys + "／賣出 " + d.insider.sells +
+    "）。以下係金額最大嘅 12 筆。";
   var il = "";
   if (d.insider.trades.length === 0) il = "<li>過去兩日冇有意義嘅內部人交易。</li>";
   d.insider.trades.forEach(function(t) {
