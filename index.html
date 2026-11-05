@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>美股每日十分鐘</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #fff; color: #1a1a1a;
+    font-family: -apple-system, "PingFang HK", "Microsoft JhengHei", sans-serif;
+    font-size: 20px; line-height: 1.6; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 20px 18px 60px; }
+  h1 { font-size: 32px; margin: 6px 0 2px; }
+  .sub { font-size: 18px; color: #666; }
+  h2 { font-size: 25px; margin: 38px 0 10px; padding-bottom: 6px;
+    border-bottom: 2px solid #1a1a1a; }
+  .headline { font-size: 23px; background: #f2f6ff; border-left: 6px solid #2456c8;
+    padding: 16px 18px; margin: 18px 0 6px; }
+  .focus { font-size: 21px; background: #fff7e6; border-left: 6px solid #d9930d;
+    padding: 14px 18px; margin: 10px 0; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .card { border: 1px solid #ddd; border-radius: 10px; padding: 12px 14px; }
+  .card .name { font-size: 18px; color: #555; }
+  .card .val { font-size: 26px; font-weight: 700; }
+  .card .chg { font-size: 20px; }
+  .pos { color: #0a7d2c; } .neg { color: #c81e1e; }
+  table { width: 100%; border-collapse: collapse; font-size: 20px; }
+  th, td { padding: 9px 8px; border-bottom: 1px solid #e5e5e5; text-align: right; }
+  th:first-child, td:first-child { text-align: left; }
+  th { font-size: 18px; color: #555; }
+  .scroll { overflow-x: auto; }
+  .bar-row { display: flex; align-items: center; gap: 10px; margin: 7px 0; font-size: 20px; }
+  .bar-row .nm { width: 110px; flex: none; }
+  .bar-row .amt { width: 110px; flex: none; text-align: right; }
+  .bar { height: 20px; border-radius: 4px; }
+  .bar.in { background: #0a7d2c; } .bar.out { background: #c81e1e; }
+  .note { font-size: 17px; color: #666; }
+  ul { padding-left: 24px; }
+  li { margin: 8px 0; }
+  a { color: #2456c8; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  img.chart { width: 100%; border: 1px solid #ddd; border-radius: 10px; }
+  .foot { margin-top: 44px; font-size: 17px; color: #666;
+    border-top: 1px solid #ddd; padding-top: 14px; }
+  .loading { color: #666; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>美股每日十分鐘</h1>
+  <div class="sub" id="dateline">載入中…</div>
+  <div class="headline" id="headline"><span class="loading">載入中…</span></div>
+  <div class="focus" id="focus" style="display:none"></div>
+
+  <h2>大市</h2>
+  <div class="cards" id="indexCards"></div>
+  <p class="note" id="macroLine"></p>
+  <p class="note" id="breadthLine"></p>
+
+  <h2>板塊資金流</h2>
+  <div id="sectorBars"></div>
+  <p><img class="chart" id="sectorChart" src="sector_flow.png" alt="板塊資金流圖"></p>
+  <p class="note">Yahoo Finance 5 分鐘 bar，Chaikin 資金流近似計算，非逐筆訂單流。綠色淨流入，紅色淨流出。</p>
+
+  <h2>觀察名單（25 隻）</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>股票</th><th>現價</th><th>一日升跌</th><th>50 日線</th><th>200 日線</th><th>RSI</th></tr></thead>
+    <tbody id="watchBody"></tbody>
+  </table></div>
+  <p class="note">按一日升跌由高至低排。RSI 係 14 日。50／200 日線講股價喺條線上面定下面。</p>
+
+  <h2>黑盒 Top 10</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>#</th><th>股票</th><th>綜合分</th><th>板塊</th><th>一日升跌</th></tr></thead>
+    <tbody id="bbBody"></tbody>
+  </table></div>
+  <p class="note">黑盒七因子等權重綜合分，宇宙 S&amp;P 500 ∪ Nasdaq-100。分數唔係買賣建議。</p>
+
+  <h2>持股變化：內幕交易（Form 4）</h2>
+  <p class="note" id="insiderSummary"></p>
+  <ul id="insiderList"></ul>
+  <p class="note">資料嚟自 SEC EDGAR Form 4；只收錄高層／董事買入或單筆 ≥ $100k 嘅交易。內幕人賣出好多時係行使期權或者交稅，唔可以直接當睇淡。</p>
+
+  <h2>今日財報</h2>
+  <ul id="earnList"></ul>
+
+  <h2>明日觀察</h2>
+  <ul id="tomorrowList"></ul>
+
+  <h2>今日要聞</h2>
+  <ul id="newsList"></ul>
+
+  <h2>過去 10 日</h2>
+  <div class="scroll"><table>
+    <thead><tr><th>日期</th><th>標普升跌</th><th>板塊淨流入</th><th>最強板塊</th><th>最弱板塊</th></tr></thead>
+    <tbody id="histBody"></tbody>
+  </table></div>
+
+  <div class="foot">
+    <div id="sources"></div>
+    <div>美股每日十分鐘 · 僅供參考，不構成投資建議。</div>
+  </div>
+</div>
+<script>
+function fmt(n, d) { return n == null ? "—" : Number(n).toLocaleString("en-US", {minimumFractionDigits: d == null ? 2 : d, maximumFractionDigits: d == null ? 2 : d}); }
+function chgHtml(c, suffix) {
+  if (c == null) return "—";
+  var cls = c >= 0 ? "pos" : "neg";
+  var sign = c >= 0 ? "+" : "";
+  return '<span class="' + cls + '">' + sign + c.toFixed(2) + (suffix || "%") + "</span>";
+}
+function yh(sym) { return "https://finance.yahoo.com/quote/" + encodeURIComponent(sym); }
+
+fetch("data.json").then(function(r) { return r.json(); }).then(function(d) {
+  document.getElementById("dateline").textContent =
+    d.date + "（" + d.weekday + "） · 美東收市後更新 · 資料截至 " + d.updated_at;
+  document.getElementById("headline").textContent = d.headline;
+  if (d.focus) { var f = document.getElementById("focus"); f.style.display = ""; f.textContent = d.focus; }
+
+  var cards = "";
+  d.market.indices.forEach(function(x) {
+    cards += '<div class="card"><div class="name">' + x.name + '</div><div class="val">' +
+      fmt(x.close, 2) + '</div><div class="chg">' + chgHtml(x.chg) + "</div></div>";
+  });
+  cards += '<div class="card"><div class="name">VIX 恐慌指數</div><div class="val">' +
+    fmt(d.market.vix.close, 2) + '</div><div class="chg">' + chgHtml(d.market.vix.chg) + "</div></div>";
+  document.getElementById("indexCards").innerHTML = cards;
+  document.getElementById("macroLine").textContent = d.market.macro.map(function(m) {
+    var v = m.unit === "厘" ? m.value.toFixed(2) + "%（" + (m.chg >= 0 ? "+" : "") + m.chg.toFixed(2) + " 厘）"
+      : fmt(m.value, 2) + "（" + (m.chg >= 0 ? "+" : "") + m.chg.toFixed(2) + "%）";
+    return m.name + " " + v;
+  }).join(" · ");
+  document.getElementById("breadthLine").textContent =
+    "觀察名單今日 " + d.breadth.up + " 升 " + d.breadth.down + " 跌；" +
+    d.breadth.above50 + " 隻企喺 50 日線上面。";
+
+  var maxFlow = Math.max.apply(null, d.sectors.map(function(s) { return Math.abs(s.flow_m); }));
+  var bars = "";
+  d.sectors.forEach(function(s) {
+    var w = Math.max(2, Math.abs(s.flow_m) / maxFlow * 100);
+    var cls = s.flow_m >= 0 ? "in" : "out";
+    var amt = (s.flow_m >= 0 ? "+" : "") + s.flow_m.toLocaleString("en-US") + "M";
+    bars += '<div class="bar-row"><div class="nm">' + s.name + "（" + s.ticker + "）</div>" +
+      '<div style="flex:1"><div class="bar ' + cls + '" style="width:' + w + '%"></div></div>' +
+      '<div class="amt ' + cls + '">' + amt + "</div></div>";
+  });
+  document.getElementById("sectorBars").innerHTML = bars;
+  document.getElementById("sectorChart").onerror = function() { this.style.display = "none"; };
+
+  var wb = "";
+  d.watchlist.forEach(function(w) {
+    wb += "<tr><td><a href='" + yh(w.symbol) + "' target='_blank' rel='noopener'>" + w.symbol + "</a>" +
+      (w.name && w.name !== w.symbol ? " " + w.name : "") + "</td><td>" + fmt(w.price, 2) + "</td><td>" +
+      chgHtml(w.chg) + "</td><td>" + (w.above50 == null ? "—" : (w.above50 ? "上面" : "下面")) + "</td><td>" +
+      (w.above200 == null ? "—" : (w.above200 ? "上面" : "下面")) + "</td><td>" +
+      (w.rsi == null ? "—" : w.rsi) + "</td></tr>";
+  });
+  document.getElementById("watchBody").innerHTML = wb;
+
+  var bb = "";
+  d.blackbox.forEach(function(b) {
+    bb += "<tr><td>" + b.rank + "</td><td><a href='" + yh(b.symbol) + "' target='_blank' rel='noopener'>" +
+      b.symbol + "</a></td><td>" + b.composite.toFixed(2) + "</td><td>" +
+      (b.sector || "—") + "</td><td>" + chgHtml(b.chg) + "</td></tr>";
+  });
+  document.getElementById("bbBody").innerHTML = bb || '<tr><td colspan="5">未有數據</td></tr>';
+
+  document.getElementById("insiderSummary").textContent =
+    "過去兩日共 " + (d.insider.buys + d.insider.sells) + " 筆有意義交易（買入 " +
+    d.insider.buys + "／賣出 " + d.insider.sells + "）。";
+  var il = "";
+  if (d.insider.trades.length === 0) il = "<li>過去兩日冇有意義嘅內部人交易。</li>";
+  d.insider.trades.forEach(function(t) {
+    il += '<li class="' + (t.buy ? "pos" : "neg") + '">' + t.text + "</li>";
+  });
+  document.getElementById("insiderList").innerHTML = il;
+
+  var el = "";
+  if (d.earnings.length === 0) el = "<li>今日冇大市值公司出業績。</li>";
+  d.earnings.forEach(function(e) {
+    el += "<li><a href='" + yh(e.ticker) + "' target='_blank' rel='noopener'>" + e.ticker + "</a> " +
+      e.name + "（" + e.timing + "）：" + e.summary +
+      (e.chg == null ? "" : " 股價" + (e.chg >= 0 ? "升" : "跌") + Math.abs(e.chg).toFixed(1) + "%。") + "</li>";
+  });
+  document.getElementById("earnList").innerHTML = el;
+
+  var tl = "";
+  if (d.tomorrow.length === 0) tl = "<li>未有資料。</li>";
+  d.tomorrow.forEach(function(t) {
+    tl += "<li><a href='" + yh(t.ticker) + "' target='_blank' rel='noopener'>" + t.ticker + "</a> " +
+      t.name + "：" + t.note + "。</li>";
+  });
+  document.getElementById("tomorrowList").innerHTML = tl;
+
+  var nl = "";
+  if (d.news.length === 0) nl = "<li>未有新聞。</li>";
+  d.news.forEach(function(n) {
+    nl += "<li><a href='" + n.link + "' target='_blank' rel='noopener'>" + n.title + "</a>" +
+      (n.source ? "（" + n.source + "）" : "") + "</li>";
+  });
+  document.getElementById("newsList").innerHTML = nl;
+
+  document.getElementById("sources").textContent = "數據來源：" + d.sources + "。";
+}).catch(function() {
+  document.getElementById("headline").textContent = "暫時攞唔到今日數據，稍後再睇。";
+});
+fetch("history.json").then(function(r) { return r.json(); }).then(function(h) {
+  var rows = "";
+  h.slice(-10).reverse().forEach(function(x) {
+    rows += "<tr><td>" + x.date + "</td><td>" + chgHtml(x.spx_chg) + "</td><td>" +
+      x.inflow_n + " / 11</td><td>" + (x.best_sector || "—") + "</td><td>" +
+      (x.worst_sector || "—") + "</td></tr>";
+  });
+  document.getElementById("histBody").innerHTML = rows;
+}).catch(function() {});
+</script>
+</body>
+</html>
