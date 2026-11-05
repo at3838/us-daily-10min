@@ -37,16 +37,17 @@
   th { font-size: 18px; color: #555; }
   .scroll { overflow-x: auto; }
   .bar-row { display: flex; align-items: center; gap: 10px; margin: 7px 0; font-size: 20px; }
-  .bar-row .nm { width: 110px; flex: none; }
-  .bar-row .amt { width: 110px; flex: none; text-align: right; }
-  .bar { height: 20px; border-radius: 4px; }
-  .bar.in { background: #0a7d2c; } .bar.out { background: #c81e1e; }
+  .bar-row .nm { width: 150px; flex: none; white-space: nowrap; font-size: 19px; }
+  .bar-row .amt { width: 105px; flex: none; text-align: right; }
+  .bar-row .track { flex: 1; position: relative; height: 20px; }
+  .bar-row .track::before { content: ""; position: absolute; left: 50%; top: -2px; bottom: -2px; width: 2px; background: #999; }
+  .bar { position: absolute; top: 0; height: 20px; border-radius: 4px; }
+  .bar.in { left: 50%; background: #0a7d2c; } .bar.out { right: 50%; background: #c81e1e; }
   .note { font-size: 17px; color: #666; }
   ul { padding-left: 24px; }
   li { margin: 8px 0; }
   a { color: #2456c8; text-decoration: none; }
   a:hover { text-decoration: underline; }
-  img.chart { width: 100%; border: 1px solid #ddd; border-radius: 10px; }
   .foot { margin-top: 44px; font-size: 17px; color: #666;
     border-top: 1px solid #ddd; padding-top: 14px; }
   .loading { color: #666; }
@@ -68,7 +69,6 @@
 
   <h2 id="sectors">2. 錢正在往哪裡跑？</h2>
   <div id="sectorBars"></div>
-  <p><img class="chart" id="sectorChart" src="sector_flow.png" alt="板塊資金流圖"></p>
   <p class="note">Yahoo Finance 5 分鐘 bar，Chaikin 資金流近似計算，非逐筆訂單流。綠色淨流入，紅色淨流出。</p>
 
   <h2 id="stocks">3. 那我該看哪幾檔？ — 觀察名單（25 隻）</h2>
@@ -155,15 +155,14 @@ fetch("data.json").then(function(r) { return r.json(); }).then(function(d) {
   var maxFlow = Math.max.apply(null, d.sectors.map(function(s) { return Math.abs(s.flow_m); }));
   var bars = "";
   d.sectors.forEach(function(s) {
-    var w = Math.max(2, Math.abs(s.flow_m) / maxFlow * 100);
+    var w = Math.max(2, Math.abs(s.flow_m) / maxFlow * 50);
     var cls = s.flow_m >= 0 ? "in" : "out";
     var amt = (s.flow_m >= 0 ? "+" : "") + s.flow_m.toLocaleString("en-US") + "M";
     bars += '<div class="bar-row"><div class="nm">' + s.name + "（" + s.ticker + "）</div>" +
-      '<div style="flex:1"><div class="bar ' + cls + '" style="width:' + w + '%"></div></div>' +
+      '<div class="track"><div class="bar ' + cls + '" style="width:' + w + '%"></div></div>' +
       '<div class="amt ' + cls + '">' + amt + "</div></div>";
   });
   document.getElementById("sectorBars").innerHTML = bars;
-  document.getElementById("sectorChart").onerror = function() { this.style.display = "none"; };
 
   var wb = "";
   d.watchlist.forEach(function(w) {

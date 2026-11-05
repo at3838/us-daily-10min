@@ -319,16 +319,6 @@ def main():
         except Exception as e:
             print(f"WARN sector {ticker}: {e}", file=sys.stderr)
     sectors.sort(key=lambda x: -x["flow_m"])
-    # 板塊圖：sector_flow.py 會自己畫，呢度直接畫一張放 repo
-    try:
-        chart_src = os.path.join(XF, f"sector_flow_{target}.png")
-        if not os.path.exists(chart_src):
-            sf.make_chart([(s["name"], s["ticker"], s["flow_m"])
-                           for s in sectors], target, chart_src)
-        import shutil
-        shutil.copy(chart_src, os.path.join(repo, "sector_flow.png"))
-    except Exception as e:
-        print(f"WARN sector chart: {e}", file=sys.stderr)
     inflow_n = sum(1 for s in sectors if s["flow_m"] > 0)
 
     # --- 5. 黑盒 Top 10 ---
