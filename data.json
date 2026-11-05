@@ -1,346 +1,355 @@
 {
-  "date": "2026-11-04",
-  "weekday": "星期三",
-  "updated_at": "2026-11-05 11:23 UTC",
-  "headline": "標普 500 升 1.58% 收 7,689 點，道指 升 3.03%，納指 升 1.44%；11 個板塊 7 個淨流入，金融最強（+585M），能源最弱（-1,009M）；觀察名單 25 隻 8 升 17 跌，MSFT最勁 +6.7%，CRWV最弱 -9.9%。",
-  "focus": "焦點：CRWV 跌 9.9%、ONDS 跌 9.0%、AVAV 跌 8.3%、SNDK 跌 7.9%。",
+  "date": "2026-11-05",
+  "weekday": "星期四",
+  "updated_at": "2026-11-05 23:08 UTC",
+  "headline": "標普 500 跌 4.36% 收 7,354 點，道指 跌 3.44%，納指 跌 5.52%；11 個板塊 5 個淨流入，能源最強（+739M），金融最弱（-591M）；觀察名單 25 隻 0 升 25 跌，AAPL最勁 +-1.5%，SNDK最弱 -22.3%。",
+  "focus": "焦點：SNDK 跌 22.3%、MU 跌 17.5%、AMD 跌 17.3%、BE 跌 16.4%。",
+  "verdict": {
+    "verdict": "中性",
+    "reason": "標普企喺 50 日線（約 7,687 點）下面；200 日線（約 7,323 點）上面；VIX 28.2 升溫；觀察名單 16% 企喺 50 日線上面。",
+    "pullback": 5.9,
+    "ma50": 7686.5,
+    "ma200": 7322.7,
+    "weaken": "標普再失 200 日線（約 7,323 點）→ 環境判讀轉為偏空",
+    "steady": "標普收復 50 日線（約 7,687 點）→ 回落可視為告一段落"
+  },
   "market": {
     "indices": [
       {
         "name": "標普500",
-        "close": 7688.62,
-        "chg": 1.58
+        "close": 7353.73,
+        "chg": -4.36
       },
       {
         "name": "道瓊斯",
-        "close": 53356.12,
-        "chg": 3.03
+        "close": 51523.06,
+        "chg": -3.44
       },
       {
         "name": "納斯達克",
-        "close": 25736.51,
-        "chg": 1.44
+        "close": 24315.0,
+        "chg": -5.52
       }
     ],
     "vix": {
-      "close": 16.84,
-      "chg": 1.4
+      "close": 28.18,
+      "chg": 69.7
     },
     "macro": [
       {
         "name": "十年債息",
-        "value": 4.89,
+        "value": 4.84,
         "chg": -0.06,
         "unit": "厘"
       },
       {
         "name": "油價",
-        "value": 88.77,
-        "chg": 0.74,
+        "value": 91.2,
+        "chg": 3.5,
         "unit": "%"
       },
       {
         "name": "黃金",
-        "value": 4137.4,
-        "chg": 1.58,
+        "value": 4097.9,
+        "chg": 0.61,
         "unit": "%"
       },
       {
         "name": "Bitcoin",
-        "value": 80213.76,
-        "chg": -0.24,
+        "value": 75487.96,
+        "chg": -6.12,
         "unit": "%"
       }
     ]
   },
   "breadth": {
-    "up": 8,
-    "down": 17,
-    "above50": 6,
+    "up": 0,
+    "down": 25,
+    "above50": 4,
     "total": 25
   },
   "sectors": [
     {
-      "name": "金融",
-      "ticker": "XLF",
-      "flow_m": 585
-    },
-    {
-      "name": "必需消費",
-      "ticker": "XLP",
-      "flow_m": 505
-    },
-    {
-      "name": "非必需消費",
-      "ticker": "XLY",
-      "flow_m": 476
-    },
-    {
-      "name": "醫療保健",
-      "ticker": "XLV",
-      "flow_m": 395
-    },
-    {
-      "name": "原材料",
-      "ticker": "XLB",
-      "flow_m": 169
+      "name": "能源",
+      "ticker": "XLE",
+      "flow_m": 739
     },
     {
       "name": "公用事業",
       "ticker": "XLU",
-      "flow_m": 120
+      "flow_m": 628
+    },
+    {
+      "name": "必需消費",
+      "ticker": "XLP",
+      "flow_m": 143
+    },
+    {
+      "name": "醫療保健",
+      "ticker": "XLV",
+      "flow_m": 38
+    },
+    {
+      "name": "非必需消費",
+      "ticker": "XLY",
+      "flow_m": 4
     },
     {
       "name": "房地產",
       "ticker": "XLRE",
-      "flow_m": 42
-    },
-    {
-      "name": "科技",
-      "ticker": "XLK",
-      "flow_m": -8
-    },
-    {
-      "name": "工業",
-      "ticker": "XLI",
-      "flow_m": -148
+      "flow_m": -61
     },
     {
       "name": "通訊服務",
       "ticker": "XLC",
-      "flow_m": -314
+      "flow_m": -90
     },
     {
-      "name": "能源",
-      "ticker": "XLE",
-      "flow_m": -1009
+      "name": "工業",
+      "ticker": "XLI",
+      "flow_m": -374
+    },
+    {
+      "name": "原材料",
+      "ticker": "XLB",
+      "flow_m": -450
+    },
+    {
+      "name": "科技",
+      "ticker": "XLK",
+      "flow_m": -580
+    },
+    {
+      "name": "金融",
+      "ticker": "XLF",
+      "flow_m": -591
     }
   ],
   "watchlist": [
     {
-      "symbol": "MSFT",
-      "name": "Microsoft Corporation",
-      "price": 555.8,
-      "chg": 6.68,
+      "symbol": "AAPL",
+      "name": "Apple Inc.",
+      "price": 344.17,
+      "chg": -1.53,
       "above50": true,
       "above200": true,
-      "rsi": 64.3
+      "rsi": 53.0
     },
     {
       "symbol": "AMZN",
       "name": "Amazon.com, Inc.",
-      "price": 266.03,
-      "chg": 6.12,
+      "price": 260.21,
+      "chg": -2.19,
       "above50": true,
       "above200": true,
-      "rsi": 59.9
-    },
-    {
-      "symbol": "AAPL",
-      "name": "Apple Inc.",
-      "price": 349.51,
-      "chg": 5.31,
-      "above50": true,
-      "above200": true,
-      "rsi": 57.8
-    },
-    {
-      "symbol": "SOFI",
-      "name": "SoFi Technologies, Inc.",
-      "price": 17.38,
-      "chg": 3.64,
-      "above50": true,
-      "above200": false,
-      "rsi": 61.0
+      "rsi": 55.0
     },
     {
       "symbol": "GOOGL",
       "name": "Alphabet Inc.",
-      "price": 288.93,
-      "chg": 3.18,
+      "price": 282.57,
+      "chg": -2.2,
       "above50": false,
       "above200": false,
-      "rsi": 30.2
-    },
-    {
-      "symbol": "META",
-      "name": "Meta Platforms, Inc.",
-      "price": 630.0,
-      "chg": 1.44,
-      "above50": false,
-      "above200": false,
-      "rsi": 40.1
+      "rsi": 28.0
     },
     {
       "symbol": "UNH",
       "name": "UnitedHealth Group Incorporated",
-      "price": 409.38,
-      "chg": 1.22,
-      "above50": true,
-      "above200": true,
-      "rsi": 57.0
-    },
-    {
-      "symbol": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "price": 488.78,
-      "chg": 1.01,
-      "above50": false,
-      "above200": true,
-      "rsi": 39.5
-    },
-    {
-      "symbol": "AVGO",
-      "name": "Broadcom Inc.",
-      "price": 325.48,
-      "chg": -2.0,
-      "above50": false,
-      "above200": false,
-      "rsi": 42.0
-    },
-    {
-      "symbol": "PLTR",
-      "name": "Palantir Technologies Inc.",
-      "price": 171.7,
-      "chg": -2.11,
-      "above50": false,
-      "above200": true,
-      "rsi": 33.5
-    },
-    {
-      "symbol": "TSM",
-      "name": "Taiwan Semiconductor Manufacturing Company Limited",
-      "price": 395.75,
-      "chg": -2.24,
-      "above50": false,
-      "above200": false,
-      "rsi": 36.4
-    },
-    {
-      "symbol": "NVDA",
-      "name": "NVIDIA Corporation",
-      "price": 200.13,
-      "chg": -3.17,
-      "above50": false,
-      "above200": false,
-      "rsi": 34.5
-    },
-    {
-      "symbol": "TSLA",
-      "name": "Tesla, Inc.",
-      "price": 385.19,
+      "price": 395.72,
       "chg": -3.34,
       "above50": true,
       "above200": true,
-      "rsi": 51.4
+      "rsi": 47.2
     },
     {
-      "symbol": "INTC",
-      "name": "Intel Corporation",
-      "price": 58.27,
-      "chg": -3.77,
-      "above50": false,
-      "above200": false,
-      "rsi": 22.8
+      "symbol": "MSFT",
+      "name": "Microsoft Corporation",
+      "price": 535.93,
+      "chg": -3.58,
+      "above50": true,
+      "above200": true,
+      "rsi": 54.4
     },
     {
-      "symbol": "RKLB",
-      "name": "Rocket Lab Corporation",
-      "price": 52.37,
-      "chg": -3.78,
+      "symbol": "META",
+      "name": "Meta Platforms, Inc.",
+      "price": 605.08,
+      "chg": -3.96,
       "above50": false,
       "above200": false,
-      "rsi": 38.6
+      "rsi": 34.9
+    },
+    {
+      "symbol": "SOFI",
+      "name": "SoFi Technologies, Inc.",
+      "price": 16.04,
+      "chg": -7.71,
+      "above50": false,
+      "above200": false,
+      "rsi": 49.6
     },
     {
       "symbol": "SPCX",
       "name": "Space Exploration Technologies Corp.",
-      "price": 135.92,
-      "chg": -3.81,
+      "price": 123.62,
+      "chg": -9.05,
       "above50": false,
       "above200": null,
-      "rsi": 40.1
+      "rsi": 32.9
     },
     {
-      "symbol": "ASTS",
-      "name": "AST SpaceMobile, Inc.",
-      "price": 35.62,
-      "chg": -4.12,
+      "symbol": "NVDA",
+      "name": "NVIDIA Corporation",
+      "price": 181.6,
+      "chg": -9.26,
       "above50": false,
       "above200": false,
-      "rsi": 30.5
+      "rsi": 25.4
     },
     {
-      "symbol": "SMR",
-      "name": "NuScale Power Corporation",
-      "price": 5.13,
-      "chg": -4.47,
-      "above50": false,
-      "above200": false,
-      "rsi": 30.4
-    },
-    {
-      "symbol": "BE",
-      "name": "Bloom Energy Corporation",
-      "price": 200.4,
-      "chg": -6.36,
-      "above50": false,
-      "above200": false,
-      "rsi": 40.5
-    },
-    {
-      "symbol": "NBIS",
-      "name": "NBIS",
-      "price": 141.52,
-      "chg": -6.67,
-      "above50": false,
-      "above200": false,
-      "rsi": 34.6
-    },
-    {
-      "symbol": "MU",
-      "name": "Micron Technology, Inc.",
-      "price": 795.23,
-      "chg": -7.0,
+      "symbol": "PLTR",
+      "name": "Palantir Technologies Inc.",
+      "price": 154.99,
+      "chg": -9.73,
       "above50": false,
       "above200": true,
-      "rsi": 35.4
-    },
-    {
-      "symbol": "SNDK",
-      "name": "Sandisk Corporation",
-      "price": 1037.4,
-      "chg": -7.91,
-      "above50": false,
-      "above200": false,
-      "rsi": 30.7
-    },
-    {
-      "symbol": "AVAV",
-      "name": "AeroVironment, Inc.",
-      "price": 113.23,
-      "chg": -8.34,
-      "above50": false,
-      "above200": false,
-      "rsi": 33.3
-    },
-    {
-      "symbol": "ONDS",
-      "name": "Ondas Inc.",
-      "price": 5.27,
-      "chg": -8.98,
-      "above50": false,
-      "above200": false,
-      "rsi": 30.4
+      "rsi": 25.4
     },
     {
       "symbol": "CRWV",
       "name": "CoreWeave, Inc.",
-      "price": 48.42,
-      "chg": -9.9,
+      "price": 43.66,
+      "chg": -9.83,
+      "above50": false,
+      "above200": false,
+      "rsi": 28.7
+    },
+    {
+      "symbol": "AVAV",
+      "name": "AeroVironment, Inc.",
+      "price": 102.08,
+      "chg": -9.85,
+      "above50": false,
+      "above200": false,
+      "rsi": 27.1
+    },
+    {
+      "symbol": "INTC",
+      "name": "Intel Corporation",
+      "price": 52.25,
+      "chg": -10.33,
+      "above50": false,
+      "above200": false,
+      "rsi": 20.6
+    },
+    {
+      "symbol": "AVGO",
+      "name": "Broadcom Inc.",
+      "price": 291.53,
+      "chg": -10.43,
+      "above50": false,
+      "above200": false,
+      "rsi": 31.4
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla, Inc.",
+      "price": 343.69,
+      "chg": -10.77,
+      "above50": false,
+      "above200": false,
+      "rsi": 35.8
+    },
+    {
+      "symbol": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Company Limited",
+      "price": 353.1,
+      "chg": -10.78,
+      "above50": false,
+      "above200": false,
+      "rsi": 26.4
+    },
+    {
+      "symbol": "RKLB",
+      "name": "Rocket Lab Corporation",
+      "price": 45.99,
+      "chg": -12.18,
       "above50": false,
       "above200": false,
       "rsi": 31.6
+    },
+    {
+      "symbol": "ONDS",
+      "name": "Ondas Inc.",
+      "price": 4.52,
+      "chg": -14.23,
+      "above50": false,
+      "above200": false,
+      "rsi": 24.6
+    },
+    {
+      "symbol": "SMR",
+      "name": "NuScale Power Corporation",
+      "price": 4.37,
+      "chg": -14.81,
+      "above50": false,
+      "above200": false,
+      "rsi": 24.3
+    },
+    {
+      "symbol": "NBIS",
+      "name": "NBIS",
+      "price": 120.37,
+      "chg": -14.94,
+      "above50": false,
+      "above200": false,
+      "rsi": 29.7
+    },
+    {
+      "symbol": "ASTS",
+      "name": "AST SpaceMobile, Inc.",
+      "price": 30.2,
+      "chg": -15.22,
+      "above50": false,
+      "above200": false,
+      "rsi": 25.2
+    },
+    {
+      "symbol": "BE",
+      "name": "Bloom Energy Corporation",
+      "price": 167.52,
+      "chg": -16.41,
+      "above50": false,
+      "above200": false,
+      "rsi": 33.7
+    },
+    {
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "price": 404.4,
+      "chg": -17.26,
+      "above50": false,
+      "above200": false,
+      "rsi": 29.7
+    },
+    {
+      "symbol": "MU",
+      "name": "Micron Technology, Inc.",
+      "price": 656.39,
+      "chg": -17.46,
+      "above50": false,
+      "above200": false,
+      "rsi": 27.1
+    },
+    {
+      "symbol": "SNDK",
+      "name": "Sandisk Corporation",
+      "price": 806.43,
+      "chg": -22.26,
+      "above50": false,
+      "above200": false,
+      "rsi": 24.1
     }
   ],
   "blackbox": [
@@ -426,6 +435,7 @@
     }
   ],
   "insider": {
+    "total": 939,
     "buys": 131,
     "sells": 808,
     "trades": [
@@ -477,103 +487,137 @@
         "text": "NIPPON LIFE INSURANCE CO（大股東）買入 CRBG 223,981 股 @ $34.61，總值 $7.8M（披露 2026-11-03）",
         "buy": true
       }
-    ],
-    "total": 939
+    ]
   },
   "earnings": [
     {
-      "ticker": "MCD",
-      "name": "McDonald's",
-      "timing": "開市前出",
-      "summary": "調整後EPS 3.57美元，年升11%，高過預期3.36至3.38美元（約高6%）；收入71.6億美元，年升約1%，低過預期72.8億美元（約低1.7%）",
-      "chg": 6.53
-    },
-    {
-      "ticker": "UBER",
-      "name": "Uber",
-      "timing": "開市前出",
-      "summary": "收入147.66億美元，年升10%，高過預期約146.9億美元（約高0.5%）；但增長係2021年第一季以來最慢，商業模式改變拖低收入增長8個百分點",
-      "chg": null
-    },
-    {
-      "ticker": "CVS",
-      "name": "CVS Health",
-      "timing": "開市前出，今日最大新聞之一",
-      "summary": "收入1,084億美元，年升5.4%，高過預期約1,047億美元（約高3.5%）",
-      "chg": -12.5
-    },
-    {
-      "ticker": "NVO",
-      "name": "Novo Nordisk",
-      "timing": "歐洲時間／開市前出",
-      "summary": "銷售792億丹麥克朗，固定匯率年升4%，高過預期約732至736億丹麥克朗；以美元計收入約121.9億美元，高過預期113.9億美元（約高7%）",
-      "chg": 5.57
-    },
-    {
-      "ticker": "DDOG",
-      "name": "Datadog",
-      "timing": "開市前出",
-      "summary": "收入11.97至12.0億美元，年升35%，高過預期約11.4至11.5億美元（約高5%）",
-      "chg": -14.42
-    },
-    {
-      "ticker": "EMR",
-      "name": "Emerson Electric",
-      "timing": "開市前出，財政第四季",
-      "summary": "淨銷售52.01億美元，年升7%，高過預期51.2億美元（約高1.6%）",
-      "chg": 2.43
-    },
-    {
-      "ticker": "QCOM",
-      "name": "Qualcomm",
-      "timing": "收市後出，財政第四季",
-      "summary": "收入104.4億美元（Zacks口徑），高過預期約101.2至101.5億美元（約高3%），但年跌約7至8%（舊年同期112.7億美元）",
-      "chg": 5.33
-    },
-    {
-      "ticker": "ARM",
-      "name": "Arm Holdings",
-      "timing": "收市後出，財政2027年第二季",
-      "summary": "收入14.4億美元，年升27%，高過預期13.8億美元（約高4%）",
-      "chg": null
-    },
-    {
-      "ticker": "APP",
-      "name": "AppLovin",
-      "timing": "收市後出",
-      "summary": "收入21.848億美元，年升55%，高過預期20.7億美元（約高5.5%），亦高過公司自己指引上限20.85億美元",
-      "chg": 10.69
-    },
-    {
-      "ticker": "MELI",
-      "name": "MercadoLibre",
-      "timing": "收市後出",
-      "summary": "收入107.5億美元，年升45%（固定匯率升41%），高過預期106.6億美元（約高0.8%）",
-      "chg": 4.68
-    }
-  ],
-  "tomorrow": [
-    {
-      "ticker": "SMR",
-      "name": "SMR",
-      "note": "收市後出業績"
-    },
-    {
       "ticker": "ABNB",
       "name": "Airbnb",
-      "note": "出業績"
+      "timing": "收市後",
+      "summary": "第三季收入 $4.87B，按年升 19%（三年來最快），高過預期 $4.75B（+2.5%）；每股盈利 $3.16，高過預期 $2.85（+10.9%），上年同期 $2.21",
+      "chg": -3.54
+    },
+    {
+      "ticker": "NET",
+      "name": "Cloudflare",
+      "timing": "收市後",
+      "summary": "第三季收入 $782.5M，按年升 39%，高過預期 $733–737M（+約 6.5%）；非 GAAP 每股盈利 $0.38，高過預期 $0.35（+8.6%）；GAAP 每股虧損 $0.10（淨虧損 $34.1M）",
+      "chg": -8.28
+    },
+    {
+      "ticker": "SMR",
+      "name": "NuScale Power",
+      "timing": "收市後",
+      "summary": "第三季收入僅 $28.1 萬美元，按年跌 97%，遠低過預期 $366 萬美元；每股虧損 $0.11，好過預期虧損 $0.12",
+      "chg": -14.81
+    },
+    {
+      "ticker": "COP",
+      "name": "ConocoPhillips",
+      "timing": "盤前／日間",
+      "summary": "第三季收入 $194.4 億，按年升 29.3%，高過預期 $183.8 億（Zacks，+9.1%）；GAAP 每股盈利 $3.34，經調整 $3.27，高過預期 $3.05–3.06（+約 7%）",
+      "chg": -1.08
+    },
+    {
+      "ticker": "PH",
+      "name": "Parker Hannifin",
+      "timing": "盤前／日間",
+      "summary": "2027 財年第一季收入 $59.9 億，按年升 17.9%，高過預期 $58.2 億；經調整每股盈利 $8.90，高過預期 $8.23",
+      "chg": -1.97
+    },
+    {
+      "ticker": "CNQ",
+      "name": "Canadian Natural Resources",
+      "timing": "盤前／日間",
+      "summary": "第三季經調整每股盈利 C$1.65，高過預期 C$1.45（LSEG，+13.8%）；淨利潤 C$29.97 億（上年同期 C$6 億）；經調整淨利潤 C$34.27 億；經調整資金流 C$55.22 億",
+      "chg": -1.45
+    },
+    {
+      "ticker": "SO",
+      "name": "Southern Company",
+      "timing": "盤前／日間",
+      "summary": "第三季收入 $88.43 億，按年升 13.0%；GAAP 每股盈利 $1.77（上年同期 $1.55）；經調整每股盈利 $1.94，高過預期 $1.65（+$0.29）",
+      "chg": 0.24
+    },
+    {
+      "ticker": "DUK",
+      "name": "Duke Energy",
+      "timing": "盤前／日間",
+      "summary": "第三季收入 $91.04 億，按年升 6.6%，高過預期 $89.1 億（FactSet，+2.3%）；每股盈利 $1.99（GAAP 同經調整一樣），高過預期 $1.86（FactSet，+7%）",
+      "chg": 0.38
+    },
+    {
+      "ticker": "CI",
+      "name": "Cigna",
+      "timing": "盤前／日間",
+      "summary": "第三季經調整每股盈利 $7.98，高過預期 $7.52（+$0.46，+6.1%）；收入亦高過預期（具體數字未見披露）",
+      "chg": -1.29
+    },
+    {
+      "ticker": "CAH",
+      "name": "Cardinal Health",
+      "timing": "盤前／日間",
+      "summary": "2027 財年第一季收入 $675.13 億，按年升 5.5%，高過預期 $666.7 億（+1.3%）；非 GAAP 每股盈利 $3.26，高過預期 $2.94（+10.9%）；GAAP 每股盈利 $2.38（上年同期 $1.88）",
+      "chg": 2.25
+    },
+    {
+      "ticker": "CMI",
+      "name": "Cummins",
+      "timing": "盤前／日間",
+      "summary": "第三季收入 $94.38 億，按年升 13.5%，低過預期 $98.9 億（-4.6%）；每股盈利 $8.25（GAAP），低過預期 $8.38（-0.6%，留意預期係非 GAAP 基準）",
+      "chg": -4.93
+    },
+    {
+      "ticker": "TRGP",
+      "name": "Targa Resources",
+      "timing": "盤前／日間",
+      "summary": "第三季淨利潤 $6.582 億（上年同期 $4.784 億）；收入 $55.99 億，按年升 34.9%（上年同期 $41.51 億）",
+      "chg": -4.62
+    },
+    {
+      "ticker": "ZTS",
+      "name": "Zoetis",
+      "timing": "盤前／日間",
+      "summary": "第三季收入 $23.91 億，按年跌 1.3%，高過預期 $23 億（+3.8%）；GAAP 每股盈利 $1.44（-12%）；經調整每股盈利 $1.75，高過預期 $1.51（+15.9%）",
+      "chg": -7.95
     },
     {
       "ticker": "APD",
       "name": "Air Products",
-      "note": "出業績"
+      "timing": "盤前／日間",
+      "summary": "2026 財年第四季銷售 $36 億，按年升 12%；經調整每股盈利 $3.61（+6%，高過指引中位數）；GAAP 每股盈利 $2.62（受中國煤氣化項目退出影響）",
+      "chg": -2.94
     },
     {
-      "ticker": "WBD",
-      "name": "Warner Bros. Discovery",
-      "note": "出業績"
+      "ticker": "SRE",
+      "name": "Sempra",
+      "timing": "盤前／日間",
+      "summary": "第三季經調整每股盈利 $1.40，高過預期 $1.20（+14.8%，按年 +26.1%）；GAAP 每股盈利 $1.34（上年同期 $0.12）",
+      "chg": -3.7
+    },
+    {
+      "ticker": "ROK",
+      "name": "Rockwell Automation",
+      "timing": "盤前／日間",
+      "summary": "2026 財年第四季收入 $23.32 億，按年升 1%，低過預期 $24.09 億（-3.2%）；經調整每股盈利 $3.88（+16%），高過預期 $3.69（+5.1%）；GAAP 每股盈利 $3.11",
+      "chg": -14.15
+    },
+    {
+      "ticker": "TM",
+      "name": "Toyota",
+      "timing": "盤前／日間",
+      "summary": "2027 財年第二季營業利潤 ¥1.13 萬億，按年升 34%（六季以來首次增長），高過預期 ¥9,648.6 億（+17%）；淨利潤 ¥7,594 億，略低過預期 ¥7,697.9 億",
+      "chg": 9.35
+    },
+    {
+      "ticker": "SONY",
+      "name": "Sony",
+      "timing": "盤前／日間",
+      "summary": "2026 財年第二季銷售 ¥3.4294 萬億，按年升 10.3%；營業利潤 ¥6,223 億，按年升 45.1%（第二季紀錄）；每股盈利 ¥76.49（+47.9%）；淨利潤 ¥4,496 億",
+      "chg": 6.13
     }
   ],
+  "tomorrow": [],
   "news": [
     {
       "title": "Micron (MU) Stock Sinks As Market Gains: Here's Why - Yahoo Finance",
@@ -582,10 +626,16 @@
       "time": "Wed, 04 Nov 2026 21:45:02 GMT"
     },
     {
-      "title": "Micron Stock Drops. Memory Price Warnings Pile Up After Democrat Success. - Barron's",
-      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNMG04amV1VGQyVVBhNFhUZ0lmNXRxUTdJX1FNbmlXSGpkVC1rNnBTQ3VHb2xGbDhpZWpQYzZIek5ySURSWnVxZjdGLTZNY2ZGOVVVcnJDS0JIdmE4c0ttZ0tCUENZTFhOczlQeXZOTTJYNVpaanhzREdCTURHR2g2Y0hETkFZNmJNTS0wVkln?oc=5",
-      "source": "Barron's",
-      "time": "Wed, 04 Nov 2026 19:13:19 GMT"
+      "title": "UNH Stock Quote Price and Forecast - CNN",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBhZjVIOG9BMkZjYWxoUWlSZE9JM1lGZWU5TGIzUE5ZcFBmcC1BTWxUdVJNWS1HOXc5RXlNZUM1Yk4zS2pGQU5pLUkxRGVBdUU?oc=5",
+      "source": "CNN",
+      "time": "Wed, 04 Nov 2026 20:28:07 GMT"
+    },
+    {
+      "title": "AeroVironment, Inc. (AVAV) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBxekxrU0FjQ1pwa1o5Z1FveVF1YmtRT002Y3h4MTEzQm9Bam11Mi1kanJKR283RGVJeEZVNmgyR0FLS3pLWmQ0dzFvSllEQlhabUE?oc=5",
+      "source": "Yahoo! Finance Canada",
+      "time": "Wed, 04 Nov 2026 19:20:32 GMT"
     },
     {
       "title": "SpaceX Stock Can Get a Lift From the Anthropic IPO, but SPCX Remains Unappealing - Barchart.com",
@@ -604,23 +654,8 @@
       "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNcmpOMXJzMGNocjdPcFdMSUl6aGwzaDZzOWUxVXBFeTRaQVRFM2ZYZGZYYmV2Vl9INFowdG85bU50UUpNUF9BRVZ0Z3d6VkM1b0pWdHVyMXYwUEZlaGhQUW1sT282TUhsNEVadXljV0VaZzljd2tmQkVIa280UGNLYUhNQm9na3dvWWhWWjg1d0RlTWZ0V2FwMG1R?oc=5",
       "source": "Barron's",
       "time": "Wed, 04 Nov 2026 18:48:00 GMT"
-    },
-    {
-      "title": "Why Nvidia Stock Can Ride Out a Data-Center Crackdown - Barron's",
-      "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE0xS01LbkZsaFVHUndoOHltS1lFSzg3dnI0SVdRZ1p1Mm40MEtoM2QxcWxnb01OOFJhTlBPZ09WdjZxYy1XWjdJZzJ2NEo4clZjOGljMm9zb0RZNzJlVU1XRGwtVmF4LUlpelh6V1Bsbl8teG84MTBDbFZGeF9FZw?oc=5",
-      "source": "Barron's",
-      "time": "Wed, 04 Nov 2026 18:29:00 GMT"
     }
   ],
   "sources": "Yahoo Finance、SEC EDGAR、黑盒模型（space-6）、財報跟進",
-  "disclaimer": "僅供參考，不構成投資建議。",
-  "verdict": {
-    "verdict": "中性",
-    "reason": "標普企喺 50 日線（約 7,693 點）下面；200 日線（約 7,320 點）上面；VIX 16.8 正常；觀察名單 24% 企喺 50 日線上面。",
-    "pullback": 1.7,
-    "ma50": 7693.0,
-    "ma200": 7320.3,
-    "weaken": "標普再失 200 日線（約 7,320 點）→ 環境判讀轉為偏空",
-    "steady": "標普收復 50 日線（約 7,693 點）→ 回落可視為告一段落"
-  }
+  "disclaimer": "僅供參考，不構成投資建議。"
 }

@@ -181,6 +181,36 @@ def parse_earnings(path, tomorrow_str):
     # 1. McDonald's MCD（開市前出）
     pat = re.compile(r"^(\d+)\.\s+(.+?)\s+([A-Z]{1,5})（([^）]*)）", re.M)
     matches = list(pat.finditer(text))
+    if not matches:
+        # 新格式（2026-11-05 起）：「Airbnb（ABNB）— 收市 $170.13（-3.54%），盤後升約 11.7%」
+        # 舊編號格式搵唔到就用呢個；收市後名單由開頭簡介行抽。
+        ah = set()
+        m_ah = re.search(r"收市後[^（]*（([^）]+)）", text)
+        if m_ah:
+            ah = set(re.findall(r"\b[A-Z]{2,5}\b", m_ah.group(1)))
+        pat2 = re.compile(r"^(.+?)（([A-Z]{1,5})(?: ADR)?(?:，[^）]*)?）—\s*(.*)$", re.M)
+        m2 = list(pat2.finditer(text))
+        for i, m in enumerate(m2):
+            body = text[m.end():m2[i + 1].start() if i + 1 < len(m2) else len(text)]
+            first_bullet = None
+            for line in body.splitlines():
+                line = line.strip()
+                if line.startswith("- "):
+                    first_bullet = line[2:].strip()
+                    break
+            summary = ""
+            if first_bullet:
+                summary = first_bullet.split("。")[0].strip()
+                if len(summary) > 160:
+                    summary = summary[:160] + "…"
+            chg = None
+            pm = re.search(r"收市 \$[\d.,]+（([+-]?[\d.]+)%）", m.group(3))
+            if pm:
+                chg = float(pm.group(1))
+            out.append({"ticker": m.group(2), "name": m.group(1).strip(),
+                        "timing": "收市後" if m.group(2) in ah else "盤前／日間",
+                        "summary": summary, "chg": chg})
+        matches = []  # 新格式已入 out，唔行舊編號 loop（group 唔同）
     for i, m in enumerate(matches):
         body = text[m.end():matches[i + 1].start() if i + 1 < len(matches) else len(text)]
         first = body.strip().split("。")[0].strip()
