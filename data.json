@@ -1,490 +1,490 @@
 {
-  "date": "2026-11-12",
-  "weekday": "星期四",
-  "updated_at": "2026-11-12 22:56 UTC",
-  "headline": "標普 500 跌 0.35% 收 7,592 點，道指 跌 0.36%，納指 跌 0.39%；11 個板塊 5 個淨流入，能源最強（+338M），原材料最弱（-211M）；觀察名單 25 隻 8 升 17 跌，AMD最勁 +5.9%，NBIS最弱 -16.8%。",
-  "focus": "焦點：NBIS 跌 16.8%、SMR 跌 7.8%、ONDS 跌 7.2%、CRWV 跌 6.9%。",
+  "date": "2026-11-13",
+  "weekday": "星期五",
+  "updated_at": "2026-11-13 22:58 UTC",
+  "headline": "標普 500 跌 0.40% 收 7,562 點，道指 升 0.10%，納指 跌 0.91%；11 個板塊 5 個淨流入，醫療保健最強（+531M），必需消費最弱（-189M）；觀察名單 25 隻 4 升 21 跌，META最勁 +2.9%，NBIS最弱 -9.9%。",
+  "focus": "焦點：NBIS 跌 9.9%、AMD 跌 8.8%、CRWV 跌 6.1%、SNDK 跌 5.6%。",
   "verdict": {
     "verdict": "中性",
-    "reason": "標普企喺 50 日線（約 7,671 點）下面；200 日線（約 7,337 點）上面；VIX 18.7 正常；觀察名單 32% 企喺 50 日線上面。",
-    "pullback": 2.9,
-    "ma50": 7671.2,
-    "ma200": 7337.4,
-    "weaken": "標普再失 200 日線（約 7,337 點）→ 環境判讀轉為偏空",
-    "steady": "標普收復 50 日線（約 7,671 點）→ 回落可視為告一段落"
+    "reason": "標普企喺 50 日線（約 7,667 點）下面；200 日線（約 7,340 點）上面；VIX 19.3 正常；觀察名單 24% 企喺 50 日線上面。",
+    "pullback": 3.3,
+    "ma50": 7667.5,
+    "ma200": 7340.3,
+    "weaken": "標普再失 200 日線（約 7,340 點）→ 環境判讀轉為偏空",
+    "steady": "標普收復 50 日線（約 7,667 點）→ 回落可視為告一段落"
   },
   "market": {
     "indices": [
       {
         "name": "標普500",
-        "close": 7592.4,
-        "chg": -0.35
+        "close": 7561.67,
+        "chg": -0.4
       },
       {
         "name": "道瓊斯",
-        "close": 52297.09,
-        "chg": -0.36
+        "close": 52347.55,
+        "chg": 0.1
       },
       {
         "name": "納斯達克",
-        "close": 25366.09,
-        "chg": -0.39
+        "close": 25136.27,
+        "chg": -0.91
       }
     ],
     "vix": {
-      "close": 18.7,
-      "chg": 6.9
+      "close": 19.3,
+      "chg": 3.2
     },
     "macro": [
       {
         "name": "十年債息",
-        "value": 5.1,
-        "chg": 0.1,
+        "value": 5.15,
+        "chg": 0.05,
         "unit": "厘"
       },
       {
         "name": "油價",
-        "value": 88.7,
-        "chg": 2.51,
+        "value": 88.92,
+        "chg": 0.2,
         "unit": "%"
       },
       {
         "name": "黃金",
-        "value": 3881.7,
-        "chg": -2.97,
+        "value": 3887.6,
+        "chg": 0.06,
         "unit": "%"
       },
       {
         "name": "Bitcoin",
-        "value": 71242.07,
-        "chg": -3.68,
+        "value": 68305.24,
+        "chg": -4.26,
         "unit": "%"
       }
     ]
   },
   "breadth": {
-    "up": 8,
-    "down": 17,
-    "above50": 8,
+    "up": 4,
+    "down": 21,
+    "above50": 6,
     "total": 25
   },
   "sectors": [
     {
-      "name": "能源",
-      "ticker": "XLE",
-      "flow_m": 338
-    },
-    {
-      "name": "科技",
-      "ticker": "XLK",
-      "flow_m": 136
-    },
-    {
-      "name": "非必需消費",
-      "ticker": "XLY",
-      "flow_m": 56
-    },
-    {
-      "name": "公用事業",
-      "ticker": "XLU",
-      "flow_m": 22
-    },
-    {
-      "name": "房地產",
-      "ticker": "XLRE",
-      "flow_m": 1
-    },
-    {
-      "name": "通訊服務",
-      "ticker": "XLC",
-      "flow_m": -65
+      "name": "醫療保健",
+      "ticker": "XLV",
+      "flow_m": 531
     },
     {
       "name": "金融",
       "ticker": "XLF",
-      "flow_m": -65
+      "flow_m": 289
     },
     {
-      "name": "工業",
-      "ticker": "XLI",
-      "flow_m": -84
+      "name": "非必需消費",
+      "ticker": "XLY",
+      "flow_m": 281
     },
     {
-      "name": "醫療保健",
-      "ticker": "XLV",
-      "flow_m": -93
+      "name": "公用事業",
+      "ticker": "XLU",
+      "flow_m": 190
     },
     {
-      "name": "必需消費",
-      "ticker": "XLP",
-      "flow_m": -206
+      "name": "通訊服務",
+      "ticker": "XLC",
+      "flow_m": 71
+    },
+    {
+      "name": "房地產",
+      "ticker": "XLRE",
+      "flow_m": -25
     },
     {
       "name": "原材料",
       "ticker": "XLB",
-      "flow_m": -211
+      "flow_m": -33
+    },
+    {
+      "name": "工業",
+      "ticker": "XLI",
+      "flow_m": -43
+    },
+    {
+      "name": "科技",
+      "ticker": "XLK",
+      "flow_m": -90
+    },
+    {
+      "name": "能源",
+      "ticker": "XLE",
+      "flow_m": -116
+    },
+    {
+      "name": "必需消費",
+      "ticker": "XLP",
+      "flow_m": -189
     }
   ],
   "watchlist": [
     {
-      "symbol": "AMD",
-      "name": "Advanced Micro Devices, Inc.",
-      "price": 585.3,
-      "chg": 5.86,
-      "above50": true,
-      "above200": true,
-      "rsi": 57.5
-    },
-    {
-      "symbol": "AVGO",
-      "name": "Broadcom Inc.",
-      "price": 364.36,
-      "chg": 5.54,
-      "above50": true,
-      "above200": false,
-      "rsi": 59.5
-    },
-    {
-      "symbol": "GOOGL",
-      "name": "Alphabet Inc.",
-      "price": 298.7,
-      "chg": 1.79,
+      "symbol": "META",
+      "name": "Meta Platforms, Inc.",
+      "price": 641.69,
+      "chg": 2.9,
       "above50": false,
-      "above200": false,
-      "rsi": 42.3
-    },
-    {
-      "symbol": "TSLA",
-      "name": "Tesla, Inc.",
-      "price": 397.45,
-      "chg": 1.69,
-      "above50": true,
       "above200": true,
-      "rsi": 56.5
+      "rsi": 47.8
     },
     {
       "symbol": "UNH",
       "name": "UnitedHealth Group Incorporated",
-      "price": 405.13,
-      "chg": 0.54,
+      "price": 407.46,
+      "chg": 0.58,
       "above50": true,
       "above200": true,
-      "rsi": 53.7
-    },
-    {
-      "symbol": "AMZN",
-      "name": "Amazon.com, Inc.",
-      "price": 267.44,
-      "chg": 0.48,
-      "above50": true,
-      "above200": true,
-      "rsi": 58.2
-    },
-    {
-      "symbol": "MSFT",
-      "name": "Microsoft Corporation",
-      "price": 523.0,
-      "chg": 0.36,
-      "above50": true,
-      "above200": true,
-      "rsi": 48.4
-    },
-    {
-      "symbol": "SPCX",
-      "name": "Space Exploration Technologies Corp.",
-      "price": 139.94,
-      "chg": 0.14,
-      "above50": false,
-      "above200": null,
-      "rsi": 46.9
+      "rsi": 55.3
     },
     {
       "symbol": "AAPL",
       "name": "Apple Inc.",
-      "price": 354.88,
-      "chg": -0.21,
+      "price": 356.27,
+      "chg": 0.39,
       "above50": true,
       "above200": true,
-      "rsi": 59.7
+      "rsi": 60.6
     },
     {
-      "symbol": "PLTR",
-      "name": "Palantir Technologies Inc.",
-      "price": 171.58,
-      "chg": -0.48,
-      "above50": false,
-      "above200": true,
-      "rsi": 41.9
-    },
-    {
-      "symbol": "META",
-      "name": "Meta Platforms, Inc.",
-      "price": 623.61,
-      "chg": -0.82,
-      "above50": false,
-      "above200": false,
-      "rsi": 42.1
-    },
-    {
-      "symbol": "MU",
-      "name": "Micron Technology, Inc.",
-      "price": 798.44,
-      "chg": -1.59,
-      "above50": false,
-      "above200": true,
-      "rsi": 44.1
-    },
-    {
-      "symbol": "TSM",
-      "name": "Taiwan Semiconductor Manufacturing Company Limited",
-      "price": 405.49,
-      "chg": -1.9,
-      "above50": false,
-      "above200": true,
-      "rsi": 47.3
-    },
-    {
-      "symbol": "INTC",
-      "name": "Intel Corporation",
-      "price": 61.2,
-      "chg": -2.08,
-      "above50": false,
-      "above200": false,
-      "rsi": 33.4
-    },
-    {
-      "symbol": "AVAV",
-      "name": "AeroVironment, Inc.",
-      "price": 120.84,
-      "chg": -2.86,
-      "above50": false,
-      "above200": false,
-      "rsi": 46.0
-    },
-    {
-      "symbol": "RKLB",
-      "name": "Rocket Lab Corporation",
-      "price": 64.07,
-      "chg": -3.14,
+      "symbol": "MSFT",
+      "name": "Microsoft Corporation",
+      "price": 523.88,
+      "chg": 0.17,
       "above50": true,
-      "above200": false,
-      "rsi": 56.3
+      "above200": true,
+      "rsi": 48.8
     },
     {
-      "symbol": "BE",
-      "name": "Bloom Energy Corporation",
-      "price": 201.93,
-      "chg": -3.6,
+      "symbol": "AMZN",
+      "name": "Amazon.com, Inc.",
+      "price": 266.66,
+      "chg": -0.29,
+      "above50": true,
+      "above200": true,
+      "rsi": 57.4
+    },
+    {
+      "symbol": "SPCX",
+      "name": "Space Exploration Technologies Corp.",
+      "price": 139.11,
+      "chg": -0.59,
+      "above50": false,
+      "above200": null,
+      "rsi": 46.3
+    },
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet Inc.",
+      "price": 295.77,
+      "chg": -0.98,
       "above50": false,
       "above200": false,
-      "rsi": 46.0
+      "rsi": 40.6
     },
     {
       "symbol": "SOFI",
       "name": "SoFi Technologies, Inc.",
-      "price": 15.63,
-      "chg": -3.93,
+      "price": 15.42,
+      "chg": -1.34,
       "above50": false,
       "above200": false,
-      "rsi": 45.9
+      "rsi": 44.3
     },
     {
-      "symbol": "SNDK",
-      "name": "Sandisk Corporation",
-      "price": 937.46,
-      "chg": -4.11,
+      "symbol": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Company Limited",
+      "price": 398.73,
+      "chg": -1.67,
       "above50": false,
       "above200": false,
-      "rsi": 35.9
+      "rsi": 45.3
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla, Inc.",
+      "price": 390.22,
+      "chg": -1.82,
+      "above50": true,
+      "above200": true,
+      "rsi": 53.5
     },
     {
       "symbol": "NVDA",
       "name": "NVIDIA Corporation",
-      "price": 166.19,
-      "chg": -4.34,
+      "price": 162.85,
+      "chg": -2.01,
       "above50": false,
       "above200": false,
-      "rsi": 26.0
+      "rsi": 24.9
     },
     {
-      "symbol": "ASTS",
-      "name": "AST SpaceMobile, Inc.",
-      "price": 34.5,
-      "chg": -5.79,
+      "symbol": "PLTR",
+      "name": "Palantir Technologies Inc.",
+      "price": 167.99,
+      "chg": -2.09,
       "above50": false,
-      "above200": false,
-      "rsi": 39.0
+      "above200": true,
+      "rsi": 39.5
     },
     {
-      "symbol": "CRWV",
-      "name": "CoreWeave, Inc.",
-      "price": 56.6,
-      "chg": -6.86,
+      "symbol": "INTC",
+      "name": "Intel Corporation",
+      "price": 59.66,
+      "chg": -2.52,
       "above50": false,
       "above200": false,
-      "rsi": 46.0
+      "rsi": 32.4
+    },
+    {
+      "symbol": "MU",
+      "name": "Micron Technology, Inc.",
+      "price": 778.31,
+      "chg": -2.52,
+      "above50": false,
+      "above200": true,
+      "rsi": 42.5
+    },
+    {
+      "symbol": "AVAV",
+      "name": "AeroVironment, Inc.",
+      "price": 117.52,
+      "chg": -2.75,
+      "above50": false,
+      "above200": false,
+      "rsi": 43.7
     },
     {
       "symbol": "ONDS",
       "name": "Ondas Inc.",
-      "price": 5.32,
-      "chg": -7.16,
+      "price": 5.16,
+      "chg": -3.01,
       "above50": false,
       "above200": false,
-      "rsi": 40.8
+      "rsi": 39.4
     },
     {
       "symbol": "SMR",
       "name": "NuScale Power Corporation",
-      "price": 4.82,
-      "chg": -7.84,
+      "price": 4.66,
+      "chg": -3.32,
       "above50": false,
       "above200": false,
-      "rsi": 36.2
+      "rsi": 34.7
+    },
+    {
+      "symbol": "RKLB",
+      "name": "Rocket Lab Corporation",
+      "price": 61.53,
+      "chg": -3.96,
+      "above50": false,
+      "above200": false,
+      "rsi": 52.9
+    },
+    {
+      "symbol": "AVGO",
+      "name": "Broadcom Inc.",
+      "price": 347.01,
+      "chg": -4.76,
+      "above50": true,
+      "above200": false,
+      "rsi": 53.2
+    },
+    {
+      "symbol": "BE",
+      "name": "Bloom Energy Corporation",
+      "price": 191.99,
+      "chg": -4.92,
+      "above50": false,
+      "above200": false,
+      "rsi": 43.5
+    },
+    {
+      "symbol": "ASTS",
+      "name": "AST SpaceMobile, Inc.",
+      "price": 32.6,
+      "chg": -5.51,
+      "above50": false,
+      "above200": false,
+      "rsi": 36.8
+    },
+    {
+      "symbol": "SNDK",
+      "name": "Sandisk Corporation",
+      "price": 885.01,
+      "chg": -5.59,
+      "above50": false,
+      "above200": false,
+      "rsi": 33.9
+    },
+    {
+      "symbol": "CRWV",
+      "name": "CoreWeave, Inc.",
+      "price": 53.13,
+      "chg": -6.13,
+      "above50": false,
+      "above200": false,
+      "rsi": 43.1
+    },
+    {
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices, Inc.",
+      "price": 534.06,
+      "chg": -8.75,
+      "above50": false,
+      "above200": true,
+      "rsi": 50.4
     },
     {
       "symbol": "NBIS",
       "name": "NBIS",
-      "price": 128.64,
-      "chg": -16.84,
+      "price": 115.88,
+      "chg": -9.92,
       "above50": false,
       "above200": false,
-      "rsi": 38.7
+      "rsi": 35.8
     }
   ],
   "blackbox": [
     {
       "rank": 1,
       "symbol": "VLO",
-      "composite": 1.67,
+      "composite": 1.46,
       "sector": "Energy",
-      "chg": 3.71,
-      "price": 363.71
+      "chg": 3.09,
+      "price": 374.95
     },
     {
       "rank": 2,
       "symbol": "SNDK",
-      "composite": 1.41,
+      "composite": 1.37,
       "sector": "Information Technology",
-      "chg": 13.69,
-      "price": 977.69
+      "chg": -4.11,
+      "price": 937.46
     },
     {
       "rank": 3,
-      "symbol": "MPC",
-      "composite": 1.26,
-      "sector": "Energy",
-      "chg": 3.41,
-      "price": 402.84
+      "symbol": "FIS",
+      "composite": 1.18,
+      "sector": "Financials",
+      "chg": -6.12,
+      "price": 28.36
     },
     {
       "rank": 4,
       "symbol": "CPT",
-      "composite": 1.17,
+      "composite": 1.13,
       "sector": "Real Estate",
-      "chg": -0.8,
-      "price": 99.09
+      "chg": -0.7,
+      "price": 98.4
     },
     {
       "rank": 5,
-      "symbol": "FIS",
-      "composite": 1.12,
-      "sector": "Financials",
-      "chg": 6.71,
-      "price": 30.21
+      "symbol": "MPC",
+      "composite": 1.05,
+      "sector": "Energy",
+      "chg": 2.48,
+      "price": 412.85
     },
     {
       "rank": 6,
       "symbol": "UDR",
-      "composite": 1.02,
+      "composite": 1.04,
       "sector": "Real Estate",
-      "chg": -0.27,
-      "price": 36.56
+      "chg": -1.18,
+      "price": 36.13
     },
     {
       "rank": 7,
       "symbol": "MU",
-      "composite": 1.0,
+      "composite": 0.94,
       "sector": "Information Technology",
-      "chg": 11.89,
-      "price": 811.3
+      "chg": -1.59,
+      "price": 798.44
     },
     {
       "rank": 8,
-      "symbol": "PSX",
-      "composite": 0.94,
-      "sector": "Energy",
-      "chg": 3.18,
-      "price": 258.68
+      "symbol": "DOC",
+      "composite": 0.91,
+      "sector": "Real Estate",
+      "chg": -1.28,
+      "price": 20.12
     },
     {
       "rank": 9,
-      "symbol": "NVDA",
-      "composite": 0.92,
-      "sector": "Information Technology",
-      "chg": 2.87,
-      "price": 173.73
+      "symbol": "COF",
+      "composite": 0.88,
+      "sector": "Financials",
+      "chg": -1.78,
+      "price": 193.6
     },
     {
       "rank": 10,
-      "symbol": "ILMN",
-      "composite": 0.9,
-      "sector": "Health Care",
-      "chg": -0.92,
-      "price": 212.93
+      "symbol": "MA",
+      "composite": 0.86,
+      "sector": "Financials",
+      "chg": -1.23,
+      "price": 652.6
     }
   ],
   "insider": {
-    "total": 419,
-    "buys": 127,
-    "sells": 292,
+    "total": 671,
+    "buys": 194,
+    "sells": 477,
     "trades": [
       {
-        "text": "Harrison Street Real Assets Fund LLC（大股東）買入 NFRX 932,977 股 @ $26.22，總值 $24.5M（披露 2026-11-10）",
+        "text": "Harrison Street Real Assets Fund LLC（大股東）買入 NFRX 1,670,420 股 @ $26.64，總值 $44.5M（披露 2026-11-12）",
         "buy": true
       },
       {
-        "text": "JAFFER REHAN（董事）買入 FUN 700,000 股 @ $10，總值 $7.0M（披露 2026-11-10）",
+        "text": "GOLDENTREE ASSET MANAGEMENT LP 等（大股東）買入 Keenova Therapeutics 120,652 股 @ $91，總值 $11.0M（披露 2026-11-12）",
         "buy": true
       },
       {
-        "text": "JAFFER REHAN（董事）買入 FUN 400,000 股 @ $10.32，總值 $4.1M（披露 2026-11-10）",
+        "text": "RTW INVESTMENTS, LP 等（大股東）買入 OBIO 1,200,000 股 @ $5，總值 $6.0M（披露 2026-11-12）",
         "buy": true
       },
       {
-        "text": "JAFFER REHAN（董事）買入 FUN 350,000 股 @ $10.86，總值 $3.8M（披露 2026-11-10）",
+        "text": "Juniper Investment Company, LLC 等（大股東）買入 OFIX 675,000 股 @ $7.41，總值 $5.0M（披露 2026-11-12）",
         "buy": true
       },
       {
-        "text": "Barry John F（CHIEF EXECUTIVE OFFICER）買入 PSEC 1,222,704 股 @ $1.41，總值 $1.7M（披露 2026-11-10）",
+        "text": "DE ANGOITIA ALFONSO（董事）買入 LILA 245,492 股 @ $20.3，總值 $5.0M（披露 2026-11-12）",
         "buy": true
       },
       {
-        "text": "SCULLY WILLIAM P（大股東）買入 PRTA 140,000 股 @ $8.53，總值 $1.2M（披露 2026-11-10）",
+        "text": "GOLDENTREE ASSET MANAGEMENT LP 等（大股東）買入 Keenova Therapeutics 30,000 股 @ $89.25，總值 $2.7M（披露 2026-11-12）",
         "buy": true
       },
       {
-        "text": "SIMPSON BOB R（董事）買入 TXO 86,796 股 @ $13.49，總值 $1.2M（披露 2026-11-10）",
+        "text": "WEISENBURGER RANDALL J（董事）買入 MP 55,000 股 @ $36，總值 $2.0M（披露 2026-11-12）",
         "buy": true
       },
       {
-        "text": "SIMPSON BOB R（董事）買入 TXO 78,932 股 @ $13.15，總值 $1.0M（披露 2026-11-10）",
+        "text": "ARES MANAGEMENT LLC 等（大股東）買入 CTEV 65,579 股 @ $26.14，總值 $1.7M（披露 2026-11-12）",
         "buy": true
       },
       {
-        "text": "MALONE JOHN C（大股東）買入 LBTY 98,704 股 @ $9.76，總值 $963.4k（披露 2026-11-10）",
+        "text": "ARES MANAGEMENT LLC 等（大股東）買入 CTEV 65,579 股 @ $26.14，總值 $1.7M（披露 2026-11-12）",
         "buy": true
       },
       {
-        "text": "SIMPSON BOB R（董事）買入 TXO 67,111 股 @ $12.97，總值 $870.7k（披露 2026-11-10）",
+        "text": "JOBSON CHARLES E（大股東）買入 JYNT 236,116 股 @ $6.65，總值 $1.6M（披露 2026-11-12）",
         "buy": true
       },
       {
-        "text": "Amoruso Cristiano（董事）買入 MX 300,000 股 @ $2.46，總值 $739.0k（披露 2026-11-10）",
+        "text": "Nicholson Kenneth J.（CEO and President）買入 FIP 400,000 股 @ $3.83，總值 $1.5M（披露 2026-11-12）",
         "buy": true
       },
       {
-        "text": "Carter Thomas L Jr（Executive Chairman）買入 BSM 50,000 股 @ $13.73，總值 $686.3k（披露 2026-11-10）",
+        "text": "Cannon-Brookes Michael（CEO, Co-Founder）買入 TEAM 10,000 股 @ $149.72，總值 $1.5M（披露 2026-11-12）",
         "buy": true
       }
     ]
@@ -620,40 +620,40 @@
   "tomorrow": [],
   "news": [
     {
+      "title": "Analyst Says Sandisk Corp. (SNDK) Offers More Than 100% Upside. Should You Buy? - Yahoo Finance",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNeUF4ZkdPMWtsazZhZHVJMHBQMXpMUHRWeEpqWmt0YTFSRER0OWZKMldXeUViaUdZMHpZai1ITHl2QzRTckE4SDkxQnYtT3lhYk10NjlLZ3Z4T1JoVGJMLUdERGZSTmFNbjRaQ0c4ZGtiMHNTd0F0Zmc3WjRkMTJBdGpTN0pId2JBbkFDNGo0VDUxYWQ3V25ZVmE2RQ?oc=5",
+      "source": "Yahoo Finance",
+      "time": "Wed, 11 Nov 2026 23:28:56 GMT"
+    },
+    {
       "title": "Jensen Huang Said to Have Had Relationship With Nvidia Executive Who Reports to Him - The New York Times",
       "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPV0NCNjVPR0M2THpMdkhiTW5jZUlmVXJzNHk4YjZYeWtGZHc3Vk81V3czUXBBVjktcXlSLWs3MFdyWkRtcmRpV1BmY1hKckhyU3RYWEdsTWlGcnhFVFVNakRLLWZvREpURHJnRVVSdmZEcHJWU2p5YWJZX1pEWGRWRDB1aw?oc=5",
       "source": "The New York Times",
       "time": "Wed, 11 Nov 2026 21:55:36 GMT"
     },
     {
-      "title": "Alphabet (GOOGL) Stock Quotes, Company News And Chart Analysis - Investor's Business Daily",
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQZ3RHcWtkOUszb3lIUjQ3ZndGU05XWDlWeU5IQVJJMEJsUjh6NnFUaFdwVGR0QjVadkFOcm9IbkVsejNxUlJieEdzekQ4TXRsQmQ0ejVZMkpHRkw4TnQwWnB5MnJDLTBrSXBzTTVzdlpOc1ZnNEZpcDdBVWhDNG5wcF9NTVZHYVcxR3hCMVpvVU9OeVJhMko0Ym1qMDNiM1R2Wk9qREoyeUVOdGcwNjh2Qg?oc=5",
-      "source": "Investor's Business Daily",
-      "time": "Wed, 11 Nov 2026 19:04:00 GMT"
+      "title": "SoFi Technologies, Inc. (SOFI) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1OYVFNaW40WnVXdTU1NDJHa09fSGNXcllWV0JjbjUwUThjelRBeFVvY3I5QXpLODdDS1ZNckNUQUx4d0s2N3dUdFk5Wmp4a1hWMFE?oc=5",
+      "source": "Yahoo! Finance Canada",
+      "time": "Wed, 11 Nov 2026 21:46:13 GMT"
     },
     {
-      "title": "Tesla Stock Quotes, Company News And Chart Analysis - Investor's Business Daily",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPSzZVOXVEYXlod1RJM18wNmhteHZNVjhTVUhOb2ZXMXNDd0JHX3czT0RmS3VBeFl0UUN5ckhOZUV2ckpCby1sc0hsa3FJQzByczR3Zm45OHNRSUhnMVpfbVg2X2MtYVZwd3lRVk5WMzhPZkFERUl5UmpmNVVFTFNsNEVXd0NpVW5Lc1BFYnFLRHNydHoxbW5QNUlpOE1mT3B2RVE?oc=5",
-      "source": "Investor's Business Daily",
-      "time": "Wed, 11 Nov 2026 19:02:00 GMT"
+      "title": "CRWV Stock Quote Price and Forecast - CNN",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5iRXpHc0tvWFhYT0hwWElXV3lzT2Q5blVPMkdmdVBFZzlRTnRQVHgxT2pZODN6QXpVTEdDTFhtNXcyazduT09NWEhBWWE0UkNF?oc=5",
+      "source": "CNN",
+      "time": "Wed, 11 Nov 2026 21:15:24 GMT"
     },
     {
-      "title": "Jim Cramer Won’t Buy SpaceX Stock Yet, Calling Its Costs ‘Astronomical.’ Cathie Wood Just Bought $49 Million of SPCX. - Barchart.com",
-      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxORUJKcFRpYUVVM25fdkFXdjBudTVlTUZKVUZ2TF91YnloRURiMldMZ05OYXhnUGJMSUZvTXJjcUZiaFQwbDV2YUhZRU5iaWlJNm5DeTVza0VZSUhSWWZnQWxrWXdTSGgxanB2ZUNUWm5MU0dfeFJOZWVCRkFCUlZVbmlTWmlUNTNnSTBkQVJ6ZE5KLVRKOHZMaDEtOUhkamRLLVVud09qenBFdFY4ejlPbHBNZkNVeUFldjNOTjZ1WDdJVEtkbWJ0TEdEZlRTVFhiZDRGQVdoWXF6cDVCSVdUQXRmQTBzNTNMd1E?oc=5",
-      "source": "Barchart.com",
-      "time": "Wed, 11 Nov 2026 18:43:53 GMT"
+      "title": "INTC Stock Quote Price and Forecast - CNN",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE1lWkZjY0djMFFwSUlhcXJYVkRXQlptNHppd1R5NFlzSm9UckZacWJERUZpdWw5WlViaENhblBac0hQZ3BNdmZUZ1VONmU1dHp2?oc=5",
+      "source": "CNN",
+      "time": "Wed, 11 Nov 2026 21:15:10 GMT"
     },
     {
-      "title": "TSLA Stock Climbs After Elon Musk Extends Cybertruck Run Through Summer 2027, Citing ‘Sentimentality’ - TradingView",
-      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPVXJtVFRuX1ZxTldSTGZjd1ZpZWV2bjdZM1czRkIzRFVEcHozbEhhbkpfQ2xaYnVDOXpEbDBvSGRwdC1PTjlWQ0VhVGZvRjZjV0Jib0tkSWNpVXF4ZXJoWmM3bmpaMW05S3JwWGpSWUdyY1FxNWFTMjUwOXJxb3pDS0NtNnVJcXdWOE5Vb3V0NG1ZU3FHd3pVUGlua2hqVEE2alF6QndQREtTYVRrNUplZGE2N2F4akNaeV9jWkk0QkszcDJEWnRzRXpOX2hSN3A0ZGtOTzdVaW96ZHdzOXNuOElfSTgwQ2otSlAwbUlqVQ?oc=5",
-      "source": "TradingView",
-      "time": "Wed, 11 Nov 2026 18:42:14 GMT"
-    },
-    {
-      "title": "What's Going On With Intel Stock Wednesday? - Benzinga",
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQRGRkV2R5Q1JTaXBSeEdDckdRR21pNW9fZ0o4X2RCWXR5RW5Ba2dEQ205YzFoTkFFRTZYa2NSd2E3Q1QtZlpVMjhWTGNoRFVVV21iN09XaUxNUW13UU9fMUFJbVVveURMRlpjdEJrblI0dnRITDJJUjNOaldzY2xydmk0VVREcF9qdXJEZXdLTl96QWFWeFBBZFpsWXBCZw?oc=5",
-      "source": "Benzinga",
-      "time": "Wed, 11 Nov 2026 16:46:52 GMT"
+      "title": "Tesla Inc (TSLA-Q) Stock Price and News - The Globe and Mail",
+      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE9hdWNvdDA2bXJUbVV2Z2hRR1I0WENYc25ubEtKYnVGNFRCejI0Q1hfQjRuS0xTSU11bDNNVll5cDVudnd0MWN0bE9aNGtyUzZtRDZ6QTVSNWdnTnRIdHphbC1nQjUzSnVTRGQ0S0lNcHJjdw?oc=5",
+      "source": "The Globe and Mail",
+      "time": "Wed, 11 Nov 2026 21:00:00 GMT"
     }
   ],
   "sources": "Yahoo Finance、SEC EDGAR、黑盒模型（space-6）、財報跟進",
