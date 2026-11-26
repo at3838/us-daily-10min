@@ -1,12 +1,12 @@
 {
   "date": "2026-11-25",
   "weekday": "星期三",
-  "updated_at": "2026-11-25 23:02 UTC",
-  "headline": "標普 500 跌 0.25% 收 7,183 點，道指 升 0.33%，納指 跌 0.62%；11 個板塊 5 個淨流入，必需消費最強（+1,521M），房地產最弱（-520M）；觀察名單 25 隻 10 升 15 跌，ASTS最勁 +10.2%，SNDK最弱 -22.0%。",
-  "focus": "焦點：SNDK 跌 22.0%、ASTS 升 10.2%。",
+  "updated_at": "2026-11-26 23:00 UTC",
+  "headline": "標普 500 跌 0.25% 收 7,183 點，道指 升 0.33%，納指 跌 0.62%；11 個板塊 6 個淨流入，能源最強（+284M），醫療保健最弱（-89M）；觀察名單 25 隻 10 升 15 跌，ASTS最勁 +10.2%，MU最弱 -4.5%。",
+  "focus": "焦點：ASTS 升 10.2%。",
   "verdict": {
     "verdict": "偏空",
-    "reason": "標普企喺 50 日線（約 7,603 點）下面；200 日線（約 7,352 點）下面；VIX 28.3 升溫；觀察名單 8% 企喺 50 日線上面。",
+    "reason": "標普企喺 50 日線（約 7,603 點）下面；200 日線（約 7,352 點）下面；VIX 26.8 升溫；觀察名單 8% 企喺 50 日線上面。",
     "pullback": 8.1,
     "ma50": 7602.5,
     "ma200": 7352.5,
@@ -32,8 +32,8 @@
       }
     ],
     "vix": {
-      "close": 28.29,
-      "chg": 7.3
+      "close": 26.8,
+      "chg": -5.3
     },
     "macro": [
       {
@@ -44,20 +44,20 @@
       },
       {
         "name": "油價",
-        "value": 84.15,
-        "chg": 2.56,
+        "value": 84.91,
+        "chg": 1.47,
         "unit": "%"
       },
       {
         "name": "黃金",
-        "value": 3617.8,
-        "chg": 1.57,
+        "value": 3593.4,
+        "chg": 1.63,
         "unit": "%"
       },
       {
         "name": "Bitcoin",
-        "value": 60100.97,
-        "chg": 0.59,
+        "value": 60579.94,
+        "chg": 0.33,
         "unit": "%"
       }
     ]
@@ -70,24 +70,29 @@
   },
   "sectors": [
     {
-      "name": "必需消費",
-      "ticker": "XLP",
-      "flow_m": 1521
-    },
-    {
-      "name": "金融",
-      "ticker": "XLF",
-      "flow_m": 794
-    },
-    {
       "name": "能源",
       "ticker": "XLE",
       "flow_m": 284
     },
     {
+      "name": "金融",
+      "ticker": "XLF",
+      "flow_m": 202
+    },
+    {
       "name": "工業",
       "ticker": "XLI",
       "flow_m": 192
+    },
+    {
+      "name": "公用事業",
+      "ticker": "XLU",
+      "flow_m": 65
+    },
+    {
+      "name": "原材料",
+      "ticker": "XLB",
+      "flow_m": 62
     },
     {
       "name": "通訊服務",
@@ -100,29 +105,24 @@
       "flow_m": -6
     },
     {
-      "name": "原材料",
-      "ticker": "XLB",
-      "flow_m": -6
+      "name": "房地產",
+      "ticker": "XLRE",
+      "flow_m": -7
     },
     {
       "name": "非必需消費",
       "ticker": "XLY",
-      "flow_m": -10
+      "flow_m": -13
     },
     {
-      "name": "公用事業",
-      "ticker": "XLU",
-      "flow_m": -87
+      "name": "必需消費",
+      "ticker": "XLP",
+      "flow_m": -45
     },
     {
       "name": "醫療保健",
       "ticker": "XLV",
-      "flow_m": -88
-    },
-    {
-      "name": "房地產",
-      "ticker": "XLRE",
-      "flow_m": -520
+      "flow_m": -89
     }
   ],
   "watchlist": [
@@ -316,6 +316,15 @@
       "rsi": 33.1
     },
     {
+      "symbol": "SNDK",
+      "name": "Sandisk Corporation",
+      "price": 94.39,
+      "chg": -2.72,
+      "above50": false,
+      "above200": false,
+      "rsi": 29.4
+    },
+    {
       "symbol": "AMZN",
       "name": "Amazon.com, Inc.",
       "price": 244.43,
@@ -341,22 +350,13 @@
       "above50": false,
       "above200": false,
       "rsi": 35.7
-    },
-    {
-      "symbol": "SNDK",
-      "name": "Sandisk Corporation",
-      "price": 73.61,
-      "chg": -22.02,
-      "above50": false,
-      "above200": false,
-      "rsi": 24.1
     }
   ],
   "blackbox": [
     {
       "rank": 1,
       "symbol": "SNDK",
-      "composite": 2.31,
+      "composite": 2.25,
       "sector": "Information Technology",
       "chg": null,
       "price": 94.395
@@ -364,96 +364,157 @@
     {
       "rank": 2,
       "symbol": "VLO",
-      "composite": 1.66,
+      "composite": 1.62,
       "sector": "Energy",
-      "chg": -1.43,
-      "price": 329.4
+      "chg": -0.51,
+      "price": 323.0
     },
     {
       "rank": 3,
-      "symbol": "MPC",
-      "composite": 1.26,
-      "sector": "Energy",
-      "chg": -2.59,
-      "price": 357.69
+      "symbol": "MU",
+      "composite": 1.41,
+      "sector": "Information Technology",
+      "chg": -4.53,
+      "price": 601.25
     },
     {
       "rank": 4,
-      "symbol": "TWLO",
-      "composite": 1.13,
-      "sector": "Information Technology",
-      "chg": 7.16,
-      "price": 184.43
+      "symbol": "MPC",
+      "composite": 1.25,
+      "sector": "Energy",
+      "chg": -2.5,
+      "price": 346.27
     },
     {
       "rank": 5,
-      "symbol": "BRK-B",
-      "composite": 1.05,
-      "sector": "Financials",
-      "chg": 0.41,
-      "price": 572.36
+      "symbol": "TWLO",
+      "composite": 1.14,
+      "sector": "Information Technology",
+      "chg": 0.1,
+      "price": 180.61
     },
     {
       "rank": 6,
-      "symbol": "UDR",
-      "composite": 1.05,
-      "sector": "Real Estate",
-      "chg": 0.65,
-      "price": 35.68
+      "symbol": "HPE",
+      "composite": 1.09,
+      "sector": "Information Technology",
+      "chg": null,
+      "price": 40.19
     },
     {
       "rank": 7,
-      "symbol": "CPT",
-      "composite": 1.03,
+      "symbol": "UDR",
+      "composite": 1.05,
       "sector": "Real Estate",
-      "chg": 0.05,
-      "price": 95.85
+      "chg": 1.38,
+      "price": 36.67
     },
     {
       "rank": 8,
-      "symbol": "FOX",
-      "composite": 1.02,
-      "sector": "Communication Services",
-      "chg": 2.12,
-      "price": 57.33
+      "symbol": "BRK-B",
+      "composite": 1.04,
+      "sector": "Financials",
+      "chg": 0.37,
+      "price": 579.32
     },
     {
       "rank": 9,
-      "symbol": "SPG",
-      "composite": 0.96,
-      "sector": "Real Estate",
-      "chg": 1.21,
-      "price": 227.07
+      "symbol": "FOX",
+      "composite": 0.95,
+      "sector": "Communication Services",
+      "chg": -0.84,
+      "price": 58.48
     },
     {
       "rank": 10,
-      "symbol": "MU",
-      "composite": 0.95,
-      "sector": "Information Technology",
-      "chg": 19.04,
-      "price": 707.7
+      "symbol": "CPT",
+      "composite": 0.92,
+      "sector": "Real Estate",
+      "chg": 1.44,
+      "price": 99.25
     }
   ],
   "insider": {
-    "total": 0,
-    "buys": 0,
-    "sells": 0,
-    "trades": []
+    "total": 869,
+    "buys": 339,
+    "sells": 530,
+    "trades": [
+      {
+        "text": "Schuetz Arthur Josef Hermann（CFO Schmid Group N.V.）買入 SHMD 60,000 股 @ $1,731,429，總值 $103,885.7M（披露 2026-11-25）",
+        "buy": true
+      },
+      {
+        "text": "THIEL PETER（董事）買入 PLTR 341,423 股 @ $143.68，總值 $49.1M（披露 2026-11-24）",
+        "buy": true
+      },
+      {
+        "text": "THIEL PETER（董事）買入 PLTR 295,240 股 @ $144.61，總值 $42.7M（披露 2026-11-24）",
+        "buy": true
+      },
+      {
+        "text": "THIEL PETER（董事）買入 PLTR 213,437 股 @ $142.91，總值 $30.5M（披露 2026-11-24）",
+        "buy": true
+      },
+      {
+        "text": "Apollo Principal Holdings B GP, LLC 等（大股東）買入 Apollo Origination I 585,480 股 @ $25.62，總值 $15.0M（披露 2026-11-24）",
+        "buy": true
+      },
+      {
+        "text": "Tether Global Investments Fund, S.I.C.A.F., S.A. 等（大股東）買入 GOLD 150,000 股 @ $38.31，總值 $5.7M（披露 2026-11-25）",
+        "buy": true
+      },
+      {
+        "text": "PAGLIUCA STEPHEN G（董事）買入 COHR 28,783 股 @ $185.51，總值 $5.3M（披露 2026-11-24）",
+        "buy": true
+      },
+      {
+        "text": "Saba Capital Management, L.P.（大股東）買入 DXYZ 208,774 股 @ $24.25，總值 $5.1M（披露 2026-11-25）",
+        "buy": true
+      },
+      {
+        "text": "Williams Gregg（董事）買入 VANI 4,950,496 股 @ $1.01，總值 $5.0M（披露 2026-11-24）",
+        "buy": true
+      },
+      {
+        "text": "PAGLIUCA STEPHEN G（董事）買入 COHR 22,922 股 @ $195.5，總值 $4.5M（披露 2026-11-25）",
+        "buy": true
+      },
+      {
+        "text": "BROOKFIELD Corp /ON/ 等（大股東）買入 CSQR 297,797 股 @ $14.44，總值 $4.3M（披露 2026-11-24）",
+        "buy": true
+      },
+      {
+        "text": "Troim Tor Olav（董事）買入 BORR 1,000,000 股 @ $3.94，總值 $3.9M（披露 2026-11-25）",
+        "buy": true
+      }
+    ]
   },
   "earnings": [],
   "tomorrow": [],
   "news": [
     {
-      "title": "Nvidia Stock Keeps Falling. It’s Obvious Jensen Was Not the Only Problem. - Barron's",
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1qNE95d05EdUt4VmhtanBHWXZjaEZhUktJLXRZaUNqejRZWk1lRW5lRUdUbFhMOGM5OUZBVUNYOVAwZTk0LURzQ3RSZHJTU29QT3dGdWhyTjdaMzJUcUdFaUFMMktvUkx3aWE4LTRvUnYtN3NYZHU0TTJR?oc=5",
-      "source": "Barron's",
-      "time": "Wed, 25 Nov 2026 17:50:00 GMT"
+      "title": "AeroVironment, Inc. (AVAV) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBxekxrU0FjQ1pwa1o5Z1FveVF1YmtRT002Y3h4MTEzQm9Bam11Mi1kanJKR283RGVJeEZVNmgyR0FLS3pLWmQ0dzFvSllEQlhabUE?oc=5",
+      "source": "Yahoo! Finance Canada",
+      "time": "Wed, 25 Nov 2026 20:47:40 GMT"
     },
     {
-      "title": "Bloom Energy Corp (BE) Stock Price, Quote, News & History - Benzinga",
-      "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9QcFBsWjYwVGhESWk0ekRXb0xHNmQtSVBZV3RjQ0lSSE1wcElEWnFTd0dFeXlwTEVUdXlocFpCRkV5TEQyeW9TRg?oc=5",
-      "source": "Benzinga",
-      "time": "Wed, 25 Nov 2026 16:59:02 GMT"
+      "title": "NuScale Power Corporation (SMR) stock price, news, quote and history - Yahoo Finance Singapore",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFA3Wm5PR3B0bzFuUGk4enBicTFSaHNDdXZRcG0tSVltdEVWclpHVmtVRW9nelJCVkp6cDFuTUJDYVpiX3JRc240QzJabjd2R1JT?oc=5",
+      "source": "Yahoo Finance Singapore",
+      "time": "Wed, 25 Nov 2026 19:59:37 GMT"
+    },
+    {
+      "title": "Alphabet (GOOGL) Stock Quotes, Company News And Chart Analysis - Investor's Business Daily",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQZ3RHcWtkOUszb3lIUjQ3ZndGU05XWDlWeU5IQVJJMEJsUjh6NnFUaFdwVGR0QjVadkFOcm9IbkVsejNxUlJieEdzekQ4TXRsQmQ0ejVZMkpHRkw4TnQwWnB5MnJDLTBrSXBzTTVzdlpOc1ZnNEZpcDdBVWhDNG5wcF9NTVZHYVcxR3hCMVpvVU9OeVJhMko0Ym1qMDNiM1R2Wk9qREoyeUVOdGcwNjh2Qg?oc=5",
+      "source": "Investor's Business Daily",
+      "time": "Wed, 25 Nov 2026 18:46:00 GMT"
+    },
+    {
+      "title": "Ondas Inc. (ONDS) Stock Price, News, Quote & History - Yahoo! Finance Canada",
+      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1zendhMThzTUVoSlNIQlgzcUxjQ0hhUVZ0eDJpRFVZNXNjVng0UXhtRk1zQ1phcVM5TmY5SEdqd1BFSzZWc1N2R2JWb2EtTWNFNlE?oc=5",
+      "source": "Yahoo! Finance Canada",
+      "time": "Wed, 25 Nov 2026 17:13:22 GMT"
     },
     {
       "title": "Billionaire Stanley Druckenmiller Sold 94% of His TSMC Stake and All of His Alphabet Shares in Q3. Here’s the Brilliant Stock He Added. - The Motley Fool",
@@ -466,18 +527,6 @@
       "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxONzV3WFpHQl90VnFfWjdzeTQ5VVNhMkVaNVFzTHZfZWE4VGd6UFNzNHF0Y2JsbkJqMVNod05lLWZIUlVXUEtKY0ctQ2kycXRwSVVscVpvcjhlNlplXzhkYVlKbHd6ZmJ0UWFXLTNHSEpBbXkyVFFkWFdXN01TT054SUNndVNJbW9uT2lOLTZJTlQ3Vlh2d1VNbU5lRVc?oc=5",
       "source": "Benzinga",
       "time": "Wed, 25 Nov 2026 16:12:47 GMT"
-    },
-    {
-      "title": "AeroVironment, Inc. (AVAV) Stock Price, News, Quote & History - Yahoo! Finance Canada",
-      "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBxekxrU0FjQ1pwa1o5Z1FveVF1YmtRT002Y3h4MTEzQm9Bam11Mi1kanJKR283RGVJeEZVNmgyR0FLS3pLWmQ0dzFvSllEQlhabUE?oc=5",
-      "source": "Yahoo! Finance Canada",
-      "time": "Wed, 25 Nov 2026 15:33:25 GMT"
-    },
-    {
-      "title": "SpaceX Shares Drop Wednesday: What's Going On? - Benzinga",
-      "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOQXF4ZWVwQzZSVG0xTmtaRG1MOE42RWYyOHZoV01zOGN0Vm5UT25XblNTQ0RNTEd6MUw0cHNQblVIZGthWVZVWUFxRnBSZHVzX0lfV2JlYkVpWWtrR0pYYTlDUXRNQkczMllJTU10dVh3bXlRclY1OWd6aVB3RUpaQ0RKZWROMmdzdUNDRzl1dW0tQk5qRHdFZ19QUmxwS2lpYzFqT1lyYw?oc=5",
-      "source": "Benzinga",
-      "time": "Wed, 25 Nov 2026 15:17:31 GMT"
     }
   ],
   "sources": "Yahoo Finance、SEC EDGAR、黑盒模型（space-6）、財報跟進",
